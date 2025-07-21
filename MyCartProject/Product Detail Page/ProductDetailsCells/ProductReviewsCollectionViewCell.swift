@@ -26,15 +26,17 @@ class ProductReviewsCollectionViewCell: UICollectionViewCell {
     }()
     
     let reviewsLabel: UILabel = {
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.text = "Customer Reviews\n\n⭐⭐⭐⭐⭐ John D.\n'Great product! Highly recommended.'\n\n⭐⭐⭐⭐⭐ Sarah M.\n'Amazing quality and fast delivery.'\n\n⭐⭐⭐⭐⭐ Mike R.\n'Excellent value for money. Will buy again.'\n\n⭐⭐⭐⭐⭐ Lisa K.\n'Perfect! Exactly what I was looking for.'"
-            label.numberOfLines = 0
-            //label.font = UIFont.systemFont(ofSize: 16)
-            label.font = UIFont(name: "Montserrat-SemiBold", size: 14)
-            label.textColor = .label
-            return label
-        }()
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Customer Reviews\n\n⭐⭐⭐⭐⭐ John D.\n'Great product! Highly recommended.'\n\n⭐⭐⭐⭐⭐ Sarah M.\n'Amazing quality and fast delivery.'\n\n⭐⭐⭐⭐⭐ Mike R.\n'Excellent value for money. Will buy again.'\n\n⭐⭐⭐⭐⭐ Lisa K.\n'Perfect! Exactly what I was looking for.'"
+        label.numberOfLines = 0
+        //label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont(name: "Montserrat-SemiBold", size: 14)
+        label.textColor = .label
+        return label
+    }()
+    
+    
     
     
     

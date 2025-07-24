@@ -49,7 +49,8 @@ class HomeViewController: UIViewController {
     
      override func viewDidLoad() {
          super.viewDidLoad()
-         view.backgroundColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
+        // view.backgroundColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
+         view.backgroundColor = .white
         // setupHeaderView()
          //sideMenuManager.setup(in: self)
          navigationController?.isNavigationBarHidden = true

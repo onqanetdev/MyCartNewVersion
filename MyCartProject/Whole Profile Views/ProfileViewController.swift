@@ -26,7 +26,8 @@ class ProfileViewController: UIViewController {
         let vw = UIView()
         vw.translatesAutoresizingMaskIntoConstraints = false
         vw.layer.cornerRadius = 10
-        vw.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //vw.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        vw.backgroundColor = .descriptionBtnColour
         return vw
     }()
     
@@ -193,3 +194,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+
+
+
+
+
+
+
+

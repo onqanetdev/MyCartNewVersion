@@ -36,7 +36,8 @@ class MyAccountViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
         view.layer.cornerRadius = 60
         view.layer.borderWidth = 4
-        view.layer.borderColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //view.layer.borderColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        view.layer.borderColor = UIColor(.profileImgBorder).cgColor
         return view
     }()
 
@@ -48,7 +49,7 @@ class MyAccountViewController: UIViewController {
         tblView.dataSource = self
         tblView.register(MyAccountTblVC.self, forCellReuseIdentifier: MyAccountTblVC.cellIdentifier)
         tblView.isScrollEnabled = false
-        tblView.separatorColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        tblView.separatorColor = .cellBorder
         tblView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         return tblView
     }()
@@ -75,7 +76,8 @@ class MyAccountViewController: UIViewController {
     let logoutBtn:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+       
+        btn.backgroundColor = .logoutBtn
         btn.layer.cornerRadius = 15
         btn.addTarget(self, action: #selector(tappedLogout), for: .touchUpInside)
         return btn
@@ -84,7 +86,7 @@ class MyAccountViewController: UIViewController {
     let btnView:UIView = {
         let vw = UIView()
         vw.translatesAutoresizingMaskIntoConstraints = false
-        vw.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //vw.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
         vw.clipsToBounds = true
         vw.layer.cornerRadius = 15
         vw.isUserInteractionEnabled = false

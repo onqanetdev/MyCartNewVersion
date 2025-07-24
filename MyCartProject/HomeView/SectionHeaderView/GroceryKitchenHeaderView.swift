@@ -27,9 +27,10 @@ class GroceryKitchenHeaderView: UICollectionReusableView {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("View All", for: .normal)
-        btn.setTitleColor(UIColor(#colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)), for: .normal)
+        //btn.setTitleColor(UIColor(#colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)), for: .normal)
+        btn.setTitleColor(.viewAllBtn, for: .normal)
         //btn.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 13)
-        btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
+        btn.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         return btn
     }()
 

@@ -78,7 +78,8 @@ class BasketGroupCollectionViewCell: UICollectionViewCell {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setBackgroundImage(UIImage(systemName: "minus.circle.fill"), for: .normal)
-        btn.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //btn.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        btn.tintColor = .decreaseBtn
         return btn
     }()
     
@@ -86,7 +87,8 @@ class BasketGroupCollectionViewCell: UICollectionViewCell {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setBackgroundImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
-        btn.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //btn.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        btn.tintColor = .increaseBtn
         return btn
     }()
     
@@ -96,7 +98,8 @@ class BasketGroupCollectionViewCell: UICollectionViewCell {
         lbl.text = "1"
         lbl.font = UIFont.systemFont(ofSize: 20) // Set font size here
         
-        lbl.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //lbl.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        lbl.textColor = .quantityLbl
         return lbl
     }()
     

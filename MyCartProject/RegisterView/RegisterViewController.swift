@@ -9,15 +9,16 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    let topBackgroundImg:UIImageView = {
+    let wholeBackgroundImg:UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = 0
-        img.clipsToBounds = true
-        img.image = UIImage(named: "top_background")
+        img.image = UIImage(named: "BGMain")
         img.contentMode = .scaleToFill
+        img.clipsToBounds = true
         return img
     }()
+    
     
     
     let iconImg:UIImageView = {
@@ -26,6 +27,7 @@ class RegisterViewController: UIViewController {
         img.layer.cornerRadius = 5
         img.clipsToBounds = true
         img.image = UIImage(named: "launch_Screen")
+        img.contentMode = .scaleToFill
         return img
     }()
     
@@ -35,7 +37,8 @@ class RegisterViewController: UIViewController {
         img.image = UIImage(systemName: "ellipsis")
         img.contentMode = .scaleToFill
         img.backgroundColor = .clear
-        img.tintColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+       // img.tintColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        img.tintColor = .threeDotsColour
         return img
     }()
     
@@ -44,7 +47,8 @@ class RegisterViewController: UIViewController {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Welcome!"
-        lbl.textColor = #colorLiteral(red: 0.6745098039, green: 0.5019607843, blue: 0.8784313725, alpha: 1)
+       // lbl.textColor = #colorLiteral(red: 0.6745098039, green: 0.5019607843, blue: 0.8784313725, alpha: 1)
+        lbl.textColor = .welcomeLblColour
         lbl.font = UIFont(name: "Montserrat-Bold", size: 48)
         return lbl
     }()
@@ -64,7 +68,8 @@ class RegisterViewController: UIViewController {
         textFld.returnKeyType = .next // ✅
         // Add bottom border
         let bottomBorder = CALayer()
-        bottomBorder.backgroundColor = UIColor.systemPurple.cgColor
+        //bottomBorder.backgroundColor = UIColor.systemPurple.cgColor
+        bottomBorder.backgroundColor = UIColor(named: "BottomLineColor")?.cgColor
         bottomBorder.frame = CGRect(x: 0, y: 43, width: 360, height: 1.5)
         textFld.layer.addSublayer(bottomBorder)
         
@@ -87,7 +92,8 @@ class RegisterViewController: UIViewController {
         textFld.returnKeyType = .next // ✅
         // Add bottom border
         let bottomBorder = CALayer()
-        bottomBorder.backgroundColor = UIColor.systemPurple.cgColor
+        //bottomBorder.backgroundColor = UIColor.systemPurple.cgColor
+        bottomBorder.backgroundColor = UIColor(named: "BottomLineColor")?.cgColor
         bottomBorder.frame = CGRect(x: 0, y: 43, width: 360, height: 1.5)
         textFld.layer.addSublayer(bottomBorder)
         
@@ -117,7 +123,8 @@ class RegisterViewController: UIViewController {
         textFld.returnKeyType = .go // ✅
         // Add bottom border
         let bottomBorder = CALayer()
-        bottomBorder.backgroundColor = UIColor.systemPurple.cgColor
+        //bottomBorder.backgroundColor = UIColor.systemPurple.cgColor
+        bottomBorder.backgroundColor = UIColor(named: "BottomLineColor")?.cgColor
         bottomBorder.frame = CGRect(x: 0, y: 43, width: 360, height: 1.5)
         textFld.layer.addSublayer(bottomBorder)
         
@@ -142,8 +149,9 @@ class RegisterViewController: UIViewController {
         btn.addTarget(self, action: #selector(moveToTrendingProducts), for: .touchUpInside)
         btn.layer.cornerRadius = 25
         btn.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 24)
-        btn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
-        
+        //btn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        btn.backgroundColor = .loginBtn
+
         btn.layer.shadowColor = UIColor.black.cgColor
         btn.layer.shadowOpacity = 0.25
         btn.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -173,10 +181,7 @@ class RegisterViewController: UIViewController {
         return lbl
     }()
     
-   
-    
-    
-    
+       
     let createBtn:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -184,7 +189,8 @@ class RegisterViewController: UIViewController {
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 24)
         btn.layer.cornerRadius = 25
-        btn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        //btn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        btn.backgroundColor = .createBtnColour
         btn.addTarget(self, action: #selector(moveToRegisterScreen), for: .touchUpInside)
         btn.layer.shadowColor = UIColor.black.cgColor
         btn.layer.shadowOpacity = 0.25
@@ -208,6 +214,7 @@ class RegisterViewController: UIViewController {
         
         view.backgroundColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
         
+        
         emailTextField.delegate = self
         passWordTxtField.delegate = self
         confirmPassWordTxtField.delegate = self
@@ -215,15 +222,24 @@ class RegisterViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationController?.isNavigationBarHidden = true
         
+        view.addSubview(wholeBackgroundImg)
         
-        contentAdding()
+        view.sendSubviewToBack(wholeBackgroundImg)
+        
+        
         setupScrollView()
+        contentAdding()
+        
+        setUpWholeViewConstraints()
         setUpAllImageView()
         setUpLabels()
         setUpTexytFields()
         setupButtons()
-        //Adding the keyboard Behaviour
+        
         setupKeyboardHiding()
+        
+        
+        
         
         for family in UIFont.familyNames {
             for name in UIFont.fontNames(forFamilyName: family) {
@@ -239,18 +255,14 @@ class RegisterViewController: UIViewController {
     
     func setUpAllImageView(){
         
-        topBackgroundImg.addSubview(iconImg)
+        contentView.addSubview(iconImg)
         
         NSLayoutConstraint.activate([
-            topBackgroundImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -63),
-            topBackgroundImg.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            topBackgroundImg.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-            topBackgroundImg.heightAnchor.constraint(equalToConstant: 200),
+                iconImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+                iconImg.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+                iconImg.heightAnchor.constraint(equalToConstant: 120),
+                iconImg.widthAnchor.constraint(equalToConstant: 120),
             
-            iconImg.centerXAnchor.constraint(equalTo: topBackgroundImg.centerXAnchor),
-            iconImg.centerYAnchor.constraint(equalTo: topBackgroundImg.centerYAnchor, constant: 40),
-            iconImg.heightAnchor.constraint(equalToConstant: 80),
-            iconImg.widthAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -259,7 +271,7 @@ class RegisterViewController: UIViewController {
         
         
         NSLayoutConstraint.activate([
-            dottedImg.topAnchor.constraint(equalTo: topBackgroundImg.bottomAnchor, constant: 30),
+            dottedImg.topAnchor.constraint(equalTo: iconImg.bottomAnchor, constant: 30),
             dottedImg.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             dottedImg.widthAnchor.constraint(equalToConstant: 35),
             dottedImg.heightAnchor.constraint(equalToConstant: 25),
@@ -328,6 +340,8 @@ class RegisterViewController: UIViewController {
             createBtn.widthAnchor.constraint(equalToConstant: 180),
             createBtn.heightAnchor.constraint(equalToConstant: 50),
         ])
+        
+        contentView.bottomAnchor.constraint(equalTo: createBtn.bottomAnchor, constant: 40).isActive = true
     }
     
     
@@ -351,14 +365,35 @@ class RegisterViewController: UIViewController {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor), // ✅ this stays
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.bottomAnchor.constraint(equalTo: createBtn.bottomAnchor, constant: 40)
+            
+           //contentView.bottomAnchor.constraint(equalTo: createBtn.bottomAnchor, constant: 40)
         ])
     }
     
     
     
+    func setUpWholeViewConstraints(){
+       // contentView.addSubview(wholeBackgroundImg)
+        
+        NSLayoutConstraint.activate([
+            wholeBackgroundImg.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            wholeBackgroundImg.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            wholeBackgroundImg.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            
+            wholeBackgroundImg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            
+        ])
+    }
+    
+    
+    
+    
     func contentAdding() {
-        [topBackgroundImg, dottedImg, welcomeLbl, emailTextField, passWordTxtField, confirmPassWordTxtField,  loginBtn, forgetPasswordBtn, doNotHaveLbl, createBtn].forEach { contentView.addSubview($0) }
+       
+       // view.addSubview(scrollView)
+        [
+         //topBackgroundImg, // ✅ Add this!
+         dottedImg, welcomeLbl, emailTextField, passWordTxtField, confirmPassWordTxtField,  loginBtn, forgetPasswordBtn, doNotHaveLbl, createBtn].forEach { contentView.addSubview($0) }
     }
     
     
@@ -427,10 +462,7 @@ class RegisterViewController: UIViewController {
         
     }
     
-    
 }
-
-
 
 
 

@@ -25,7 +25,8 @@ class AllProductsHeaderView: UICollectionReusableView {
     private let locationView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "pin_img")
+        imageView.image = UIImage(named: "pin_img")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = .white
         return imageView
     }()
     
@@ -97,13 +98,11 @@ class AllProductsHeaderView: UICollectionReusableView {
     private func setupLabels() {
         // Delivery label
         deliveryLabel.text = "Delivery in 10 Minutes"
-        //deliveryLabel.font = UIFont.boldSystemFont(ofSize: 18)
         deliveryLabel.font = UIFont(name: "Montserrat-Bold", size: 18)
-        deliveryLabel.textColor = .black
+        deliveryLabel.textColor = .white
         
         // Address label
         addressLabel.text = "WORK - 903, 9th Floor, Primarc Tower"
-        //addressLabel.font = UIFont.systemFont(ofSize: 14)
         addressLabel.font = UIFont(name: "Montserrat-Bold", size: 14)
         addressLabel.textColor = UIColor.white.withAlphaComponent(0.9)
         addressLabel.numberOfLines = 1
@@ -111,13 +110,15 @@ class AllProductsHeaderView: UICollectionReusableView {
     
     private func setupSearchBar() {
         //searchBar.backgroundColor = UIColor.white.withAlphaComponent(0.2)
-        searchBar.backgroundColor = #colorLiteral(red: 0.6111966968, green: 0.4623382688, blue: 0.8610779643, alpha: 1)
+        searchBar.backgroundColor = .white
+        
+        //searchBar.backgroundColor = #colorLiteral(red: 0.6111966968, green: 0.4623382688, blue: 0.8610779643, alpha: 1)
         searchBar.layer.cornerRadius = 15
         searchBar.layer.masksToBounds = true
         
         // Search text field
-        searchTextField.placeholder = "Let's search your needs"
-        searchTextField.textColor = .white
+       // searchTextField.placeholder = "Let's search your needs"
+        searchTextField.textColor = .black
         //searchTextField.font = UIFont.systemFont(ofSize: 16)
         searchTextField.font = UIFont(name: "Montserrat-Medium", size: 16)
         searchTextField.borderStyle = .none
@@ -126,12 +127,12 @@ class AllProductsHeaderView: UICollectionReusableView {
         // Placeholder color
         searchTextField.attributedPlaceholder = NSAttributedString(
             string: "Let's search your needs",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.7)]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(1.0)]
         )
         
         // Search icon
         searchIconImageView.image = UIImage(systemName: "magnifyingglass")
-        searchIconImageView.tintColor = UIColor.white.withAlphaComponent(0.7)
+        searchIconImageView.tintColor = UIColor.black.withAlphaComponent(0.7)
         searchIconImageView.contentMode = .scaleAspectFit
     }
     
@@ -182,8 +183,6 @@ class AllProductsHeaderView: UICollectionReusableView {
             locationView.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: 5),
             locationView.widthAnchor.constraint(equalToConstant: 20),
             locationView.heightAnchor.constraint(equalToConstant: 20),
-            
-            
             
             // Address label
             addressLabel.leadingAnchor.constraint(equalTo: locationView.trailingAnchor, constant: 6),
@@ -242,3 +241,9 @@ class AllProductsHeaderView: UICollectionReusableView {
     
     
 }
+
+
+
+
+
+

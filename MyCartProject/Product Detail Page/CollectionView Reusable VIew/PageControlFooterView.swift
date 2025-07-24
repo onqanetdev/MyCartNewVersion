@@ -13,7 +13,7 @@ class PageControlFooterView: UICollectionReusableView {
     let pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.translatesAutoresizingMaskIntoConstraints = false
-        pc.currentPageIndicatorTintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        pc.currentPageIndicatorTintColor = .descriptionBtnColour
         pc.pageIndicatorTintColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
         pc.hidesForSinglePage = true
         pc.isUserInteractionEnabled = false
@@ -39,3 +39,9 @@ class PageControlFooterView: UICollectionReusableView {
         ])
     }
 }
+
+
+
+
+
+

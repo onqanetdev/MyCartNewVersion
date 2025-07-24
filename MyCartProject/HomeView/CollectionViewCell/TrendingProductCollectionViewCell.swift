@@ -57,7 +57,8 @@ class TrendingProductCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         //label.font = UIFont(name: "Helvetica", size: 13)
         label.font = UIFont(name: "Montserrat-SemiBold", size: 13)
-        label.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+       // label.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        label.textColor = .priceLbl
         return label
     }()
     
@@ -66,7 +67,8 @@ class TrendingProductCollectionViewCell: UICollectionViewCell {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.image = UIImage(systemName: "cart.circle.fill")
-        img.tintColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        //img.tintColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        img.tintColor = .cartBtn
         //img.layer.cornerRadius = 15
         img.clipsToBounds = true
         return img

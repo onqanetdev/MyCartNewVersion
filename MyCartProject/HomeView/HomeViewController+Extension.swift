@@ -58,7 +58,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingProductCollectionViewCell.cellIdentifier, for: indexPath) as?
                     TrendingProductCollectionViewCell else {fatalError("Unable deque cell...")}
+            
             cell.cellData = trendingProducts[indexPath.row]
+            
             cell.backgroundColor = .clear
             return cell
             

@@ -45,7 +45,7 @@ class ProductDetailsCollectionViewCell: UICollectionViewCell {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         //lbl.font = UIFont(name: "Helvetica", size: 13)
         lbl.font = UIFont(name: "Montserrat-SemiBold", size: 13)
-        lbl.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        lbl.textColor = .black
         lbl.text = "Price:"
         return lbl
     }()
@@ -66,7 +66,8 @@ class ProductDetailsCollectionViewCell: UICollectionViewCell {
        // lbl.font = UIFont(name: "Helvetica", size: 14)
         lbl.font = UIFont(name: "Montserrat-SemiBold", size: 14)
         lbl.text = "QUANTITY:"
-        lbl.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //lbl.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        lbl.textColor = .black
         return lbl
     }()
     
@@ -95,7 +96,7 @@ class ProductDetailsCollectionViewCell: UICollectionViewCell {
         //lbl.font = UIFont(name: "Helvetica", size: 30)
         lbl.font = UIFont(name: "Montserrat-SemiBold", size: 30)
         lbl.text = "1"
-        lbl.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        lbl.textColor = .descriptionBtnColour
         return lbl
     }()
     
@@ -122,7 +123,8 @@ class ProductDetailsCollectionViewCell: UICollectionViewCell {
     let cartView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+//        view.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        view.backgroundColor = .descriptionBtnColour
         view.layer.cornerRadius = 23
         return view
     }()
@@ -131,7 +133,8 @@ class ProductDetailsCollectionViewCell: UICollectionViewCell {
     let decrementView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        //view.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        view.backgroundColor = .descriptionBtnColour
         view.layer.cornerRadius = 15
         return view
     }()
@@ -139,7 +142,8 @@ class ProductDetailsCollectionViewCell: UICollectionViewCell {
     let incrementView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        //view.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        view.backgroundColor = .descriptionBtnColour
         view.layer.cornerRadius = 15
         return view
     }()
@@ -184,7 +188,7 @@ class ProductDetailsCollectionViewCell: UICollectionViewCell {
             starStackView.leadingAnchor.constraint(equalTo: producttitle.leadingAnchor),
             starStackView.topAnchor.constraint(equalTo: producttitle.bottomAnchor, constant: 10),
             starStackView.heightAnchor.constraint(equalToConstant: 40),
-            starStackView.widthAnchor.constraint(equalToConstant: 200),
+            starStackView.widthAnchor.constraint(equalToConstant: 100),
             
             priceLbl.leadingAnchor.constraint(equalTo: producttitle.leadingAnchor),
             priceLbl.topAnchor.constraint(equalTo: starStackView.bottomAnchor,constant: 8),
@@ -241,7 +245,7 @@ class ProductDetailsCollectionViewCell: UICollectionViewCell {
         starStackView.axis = .horizontal
         starStackView.alignment = .center
         starStackView.distribution = .fillEqually
-        starStackView.spacing = 8
+        starStackView.spacing = 2
         starStackView.translatesAutoresizingMaskIntoConstraints = false
         
         // Add Stars

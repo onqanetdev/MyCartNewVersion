@@ -14,7 +14,7 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     let applyCouponCard:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = .applyCouponBg
         view.layer.cornerRadius = 18
         //view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.clipsToBounds = true
@@ -43,7 +43,8 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setBackgroundImage(UIImage(systemName: "chevron.right.circle.fill"), for: .normal)
         btn.addTarget(self, action: #selector(applyCouponFieldShow), for: .touchUpInside)
-        btn.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //btn.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        btn.tintColor = .applyBtnProceed
         return btn
     }()
     
@@ -55,7 +56,8 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         let vw = UIView()
         vw.translatesAutoresizingMaskIntoConstraints = false
         vw.layer.cornerRadius = 20
-        vw.backgroundColor = #colorLiteral(red: 0.8431372549, green: 0.7803921569, blue: 0.8862745098, alpha: 1)
+        //vw.backgroundColor = #colorLiteral(red: 0.8431372549, green: 0.7803921569, blue: 0.8862745098, alpha: 1)
+        vw.backgroundColor = .paymentDetailsBg
         return vw
     }()
     
@@ -63,7 +65,8 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Payment Details"
-        lbl.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //lbl.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        lbl.textColor = .black
         return lbl
     }()
     
@@ -71,7 +74,8 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     let borderLine:UIView = {
         let borderLn = UIView()
         borderLn.translatesAutoresizingMaskIntoConstraints = false
-        borderLn.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //borderLn.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        borderLn.backgroundColor = .black
         return borderLn
     }()
     
@@ -163,7 +167,7 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     let expandedView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = .applyCouponBg
         view.layer.cornerRadius = 21
         view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view.clipsToBounds = true
@@ -180,7 +184,8 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         //txtField.backgroundColor = .blue
         txtField.layer.cornerRadius = 10
         txtField.layer.borderWidth = 1
-        txtField.layer.borderColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        //txtField.layer.borderColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        txtField.layer.borderColor = UIColor.decreaseBtn.cgColor
         txtField.textAlignment = .center // Horizontally center text and placeholder
         txtField.addTarget(self, action: #selector(didBeginEditing), for: .editingDidBegin)
 
@@ -190,7 +195,7 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     let applyBtn:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        btn.backgroundColor = .applyBtnProceed
         btn.layer.cornerRadius = 8
         btn.setTitle("APPLY", for: .normal)
         btn.setTitleColor(.white, for: .normal)

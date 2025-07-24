@@ -25,7 +25,7 @@ class ProductSegmentCollectionViewCell: UICollectionViewCell {
         btn.setTitleColor(.white, for: .normal)
         btn.layer.cornerRadius = 15
         btn.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner] // Only top corners
-        btn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+        btn.backgroundColor = .descriptionBtnColour
         btn.addTarget(self, action: #selector(changingSegmentsDescription), for: .touchUpInside)
         
         return btn
@@ -66,10 +66,6 @@ class ProductSegmentCollectionViewCell: UICollectionViewCell {
     
     var onDescriptionTapped: (() -> Void)?
     var onReviewsTapped: (() -> Void)?
-    
-    
-    
-    
     
     
     
@@ -130,7 +126,8 @@ class ProductSegmentCollectionViewCell: UICollectionViewCell {
     @objc func changingSegmentsDescription(){
         
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
-            self.descriptionBtn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+            //self.descriptionBtn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+            self.descriptionBtn.backgroundColor = .descriptionBtnColour
             self.descriptionBtn.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             
             self.reviewsBtn.backgroundColor = .white
@@ -162,7 +159,7 @@ class ProductSegmentCollectionViewCell: UICollectionViewCell {
     @objc func changingSegmentsReviews(){
         
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
-            self.reviewsBtn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
+            self.reviewsBtn.backgroundColor = .descriptionBtnColour
             self.reviewsBtn.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             
             self.descriptionBtn.backgroundColor = .white

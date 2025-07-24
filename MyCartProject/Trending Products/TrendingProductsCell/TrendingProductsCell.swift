@@ -57,7 +57,7 @@ class TrendingProductsCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         //label.font = UIFont(name: "Helvetica", size: 13)
         label.font = UIFont(name: "Montserrat-SemiBold", size: 13)
-        label.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        label.textColor = .priceLbl
         return label
     }()
     
@@ -77,7 +77,7 @@ class TrendingProductsCell: UICollectionViewCell {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.image = UIImage(systemName: "cart.circle.fill")
-        img.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        img.tintColor = .cartBtn
         //img.layer.cornerRadius = 15
         img.clipsToBounds = true
         return img
@@ -88,7 +88,7 @@ class TrendingProductsCell: UICollectionViewCell {
     private let offerView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        view.backgroundColor = .cartBtn
         return view
     }()
     
@@ -109,7 +109,8 @@ class TrendingProductsCell: UICollectionViewCell {
     private let quantityVw:UIView = {
         let vw = UIView()
         vw.translatesAutoresizingMaskIntoConstraints = false
-        vw.backgroundColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
+       // vw.backgroundColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
+        vw.backgroundColor = .hundredMgLblColour
         vw.layer.cornerRadius = 7
         return vw
     }()
@@ -127,7 +128,7 @@ class TrendingProductsCell: UICollectionViewCell {
     private let dotLbl: UIView = {
         let vw = UIView()
         vw.translatesAutoresizingMaskIntoConstraints = false
-        vw.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        vw.backgroundColor = .priceLbl
         vw.layer.cornerRadius = 3
         return vw
     }()
@@ -137,7 +138,7 @@ class TrendingProductsCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         //label.font = UIFont(name: "Helvetica", size: 13)
         label.font = UIFont(name: "Montserrat-Medium", size: 13)
-        label.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        label.textColor = .white
         label.text = "400 gm"
         return label
     }()

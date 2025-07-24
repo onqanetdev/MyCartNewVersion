@@ -77,12 +77,14 @@
 		8ABCAB142E29015C00049B01 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ABCAAFD2E29015C00049B01 /* Montserrat-LightItalic.ttf */; };
 		8ABCAB152E29015C00049B01 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ABCAAFB2E29015C00049B01 /* Montserrat-Italic.ttf */; };
 		8ABCAB162E29015C00049B01 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ABCAAFE2E29015C00049B01 /* Montserrat-Medium.ttf */; };
+		8ABE629A2E2E5C9C005E022A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ABE62992E2E5C9C005E022A /* Colors.xcassets */; };
 		8AD227AD2E1E24B1001C6504 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227AC2E1E24B1001C6504 /* UILabel+Extension.swift */; };
 		8AD227AF2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227AE2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift */; };
 		8AD227B22E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227B12E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift */; };
 		8AD227B52E1E766A001C6504 /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227B42E1E766A001C6504 /* ProductDetailModel.swift */; };
 		8AD227B72E1E7963001C6504 /* ProductDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227B62E1E7963001C6504 /* ProductDetailsCollectionViewCell.swift */; };
 		8AD227B92E1E7CA3001C6504 /* StarRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227B82E1E7CA3001C6504 /* StarRatingViewController.swift */; };
+		8AE0FE542E2F624F00FF24A4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0FE532E2F623C00FF24A4 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,12 +160,14 @@
 		8ABCAB022E29015C00049B01 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		8ABCAB032E29015C00049B01 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		8ABCAB042E29015C00049B01 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		8ABE62992E2E5C9C005E022A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		8AD227AC2E1E24B1001C6504 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8AD227AE2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductDetailViewController+Extension.swift"; sourceTree = "<group>"; };
 		8AD227B12E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AD227B42E1E766A001C6504 /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
 		8AD227B62E1E7963001C6504 /* ProductDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AD227B82E1E7CA3001C6504 /* StarRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingViewController.swift; sourceTree = "<group>"; };
+		8AE0FE532E2F623C00FF24A4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,9 +271,9 @@
 				8AB109F52E17854E001ED82C /* AppDelegate.swift */,
 				8ABCAAF02E28F9C700049B01 /* Fonts */,
 				8AB109F72E17854E001ED82C /* SceneDelegate.swift */,
+				8ABE62962E2E5C4F005E022A /* Assets */,
 				8AB109F92E17854E001ED82C /* ViewController.swift */,
 				8AB109FB2E17854E001ED82C /* Main.storyboard */,
-				8AB109FE2E178550001ED82C /* Assets.xcassets */,
 				8AB10A002E178550001ED82C /* LaunchScreen.storyboard */,
 				8AB10A032E178550001ED82C /* Info.plist */,
 				8AD227B82E1E7CA3001C6504 /* StarRatingViewController.swift */,
@@ -308,6 +312,7 @@
 		8AB10A192E178ACC001ED82C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8AE0FE532E2F623C00FF24A4 /* UIColor+Extension.swift */,
 				8AB10A1A2E178AF1001ED82C /* UIView+Extension.swift */,
 				8AB10A1C2E178B23001ED82C /* UIImage+Extension.swift */,
 				8AB10A342E17AC83001ED82C /* UITextField+Extension.swift */,
@@ -409,6 +414,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8ABE62962E2E5C4F005E022A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8AB109FE2E178550001ED82C /* Assets.xcassets */,
+				8ABE62992E2E5C9C005E022A /* Colors.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		8AD227B02E1E4004001C6504 /* ProductDetailsCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +512,7 @@
 				8ABCAB092E29015C00049B01 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				8ABCAB0A2E29015C00049B01 /* Montserrat-SemiBold.ttf in Resources */,
 				8ABCAB0B2E29015C00049B01 /* Montserrat-Black.ttf in Resources */,
+				8ABE629A2E2E5C9C005E022A /* Colors.xcassets in Resources */,
 				8ABCAB0C2E29015C00049B01 /* Montserrat-MediumItalic.ttf in Resources */,
 				8ABCAB0D2E29015C00049B01 /* Montserrat-ExtraLight.ttf in Resources */,
 				8ABCAB0E2E29015C00049B01 /* Montserrat-ExtraBold.ttf in Resources */,
@@ -533,6 +548,7 @@
 				8AB10A202E178D9A001ED82C /* GroceryKitchenHeaderView.swift in Sources */,
 				8AB109FA2E17854E001ED82C /* ViewController.swift in Sources */,
 				8ABCAAEA2E28DCD900049B01 /* ProfileModel.swift in Sources */,
+				8AE0FE542E2F624F00FF24A4 /* UIColor+Extension.swift in Sources */,
 				8AA622E52E21122D00693239 /* RestaurantListModel.swift in Sources */,
 				8AB10A1D2E178B23001ED82C /* UIImage+Extension.swift in Sources */,
 				8AA41F552E1F876D002E127C /* ProductSegmentCollectionViewCell.swift in Sources */,

@@ -185,14 +185,11 @@ class LoginViewController: UIViewController {
     }
     
     func setUpLabels() {
-        view.addSubview(dottedImg)
+        //view.addSubview(dottedImg)
         view.addSubview(welcomeLbl)
         
         NSLayoutConstraint.activate([
-            dottedImg.topAnchor.constraint(equalTo: topBackgroundImg.bottomAnchor, constant: 20),
-            dottedImg.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            dottedImg.widthAnchor.constraint(equalToConstant: 70),
-            dottedImg.heightAnchor.constraint(equalToConstant: 40),
+            
             
             welcomeLbl.topAnchor.constraint(equalTo: dottedImg.bottomAnchor, constant: 10),
             welcomeLbl.leadingAnchor.constraint(equalTo: dottedImg.leadingAnchor),

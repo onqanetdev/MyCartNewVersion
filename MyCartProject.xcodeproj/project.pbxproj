@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A8FBEBE2E335EF100425C88 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */; };
+		8A8FBEC02E33674D00425C88 /* CustomSignUpImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */; };
 		8A91295D2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A91295C2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift */; };
 		8A9C6CBD2E277BA8001F5B01 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C6CBC2E277BA8001F5B01 /* MyAccountViewController.swift */; };
 		8A9C6CBF2E27828F001F5B01 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C6CBE2E27828F001F5B01 /* ProfileViewController.swift */; };
@@ -88,6 +90,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignUpImgView.swift; sourceTree = "<group>"; };
 		8A91295C2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTotalCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A9C6CBC2E277BA8001F5B01 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		8A9C6CBE2E27828F001F5B01 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +185,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A9C6CBB2E277B7A001F5B01 /* Whole Profile Views */ = {
+		8A8FBEB82E33597D00425C88 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */,
+				8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		8A9C6CBB2E277B7A001F5B01 /* Profile Views */ = {
 			isa = PBXGroup;
 			children = (
 				8ABCAAE22E28AD9B00049B01 /* MyAccountView */,
@@ -191,7 +204,7 @@
 				8ABCAAEB2E28F4A000049B01 /* TestTestTestViewController.swift */,
 				8ABCAAEC2E28F4A000049B01 /* TestTestTestViewController.xib */,
 			);
-			path = "Whole Profile Views";
+			path = "Profile Views";
 			sourceTree = "<group>";
 		};
 		8AA41F562E1FCD5E002E127C /* CollectionView Reusable VIew */ = {
@@ -259,7 +272,8 @@
 		8AB109F42E17854E001ED82C /* MyCartProject */ = {
 			isa = PBXGroup;
 			children = (
-				8A9C6CBB2E277B7A001F5B01 /* Whole Profile Views */,
+				8A8FBEB82E33597D00425C88 /* Reusables */,
+				8A9C6CBB2E277B7A001F5B01 /* Profile Views */,
 				8AA622DC2E20EB4900693239 /* Basket Groups */,
 				8AAFA69C2E1D42AB00289F78 /* Product Detail Page */,
 				8ABC6A852E1BCB0800BF8DC2 /* Trending Products */,
@@ -534,11 +548,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8FBEC02E33674D00425C88 /* CustomSignUpImgView.swift in Sources */,
 				8AAFA69E2E1D442300289F78 /* ProductDetailViewController.swift in Sources */,
 				8ABC6A892E1BD5AD00BF8DC2 /* TrendingProductsViewController+Extension.swift in Sources */,
 				8AB10A332E17973C001ED82C /* LoginViewController.swift in Sources */,
 				8AB10A272E178F42001ED82C /* TypeOfProdCollectionViewCell.swift in Sources */,
 				8AB10A1B2E178AF1001ED82C /* UIView+Extension.swift in Sources */,
+				8A8FBEBE2E335EF100425C88 /* CustomTextField.swift in Sources */,
 				8AA41F5C2E1FDFF7002E127C /* ProductDescriptionCollectionViewCell.swift in Sources */,
 				8A9C6CBF2E27828F001F5B01 /* ProfileViewController.swift in Sources */,
 				8AA622DE2E20EBF000693239 /* BasketGroupViewController.swift in Sources */,

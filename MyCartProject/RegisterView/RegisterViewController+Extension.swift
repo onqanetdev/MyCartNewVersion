@@ -20,8 +20,10 @@ extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text == "" || ((textField.text?.isEmpty) != nil) {
-            if textField == emailTextField {
-                textField.text = "Email"
+            if textField == userNmTxtFld {
+                textField.text = "User Name"
+            } else if textField == userEmailIdTxtField {
+                textField.text = "Email ID"
             } else if textField == passWordTxtField {
                 textField.text = "Password"
             } else if textField == confirmPassWordTxtField {
@@ -33,14 +35,30 @@ extension RegisterViewController: UITextFieldDelegate {
     
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            if textField == emailTextField {
+        
+        if confirmPassWordTxtField.isHidden == true && userEmailIdTxtField.isHidden == true {
+            
+            if textField == userNmTxtFld {
                 passWordTxtField.becomeFirstResponder()
             } else if textField == passWordTxtField {
+                textField.resignFirstResponder()
+                navigateToNextScreen() // Call your navigation logic here
+            }
+            
+        } else {
+            
+            if textField == userNmTxtFld {
+                userEmailIdTxtField.becomeFirstResponder()
+            } else if textField == passWordTxtField {
                 confirmPassWordTxtField.becomeFirstResponder()
+            } else if textField == userEmailIdTxtField {
+                passWordTxtField.becomeFirstResponder()
             } else if textField == confirmPassWordTxtField {
                 textField.resignFirstResponder()
                 navigateToNextScreen() // Call your navigation logic here
             }
+            
+        }
             return true
         }
     
@@ -50,28 +68,6 @@ extension RegisterViewController: UITextFieldDelegate {
         navigationController?.pushViewController(HomeViewController(), animated: true)
     }
     
-    
-    
-    
-    //NotificationCenter Functions
-    
-//    @objc func keyboardWillShow(sender: NSNotification) {
-//        
-//        contentView.frame.origin.y = 0
-//        
-//        contentView.frame.origin.y =  contentView.frame.origin.y - 160
-//        
-//        
-//    }
-//    
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//        
-//        contentView.frame.origin.y = 0
-//        if contentView.frame.origin.y != 0 {
-//            contentView.frame.origin.y = 0
-//            
-//        }
-//    }
     
     
     

@@ -38,15 +38,8 @@ class SideMenuCell: UITableViewCell {
         return lbl
     }()
     
-//    let moreBtn:UIButton = {
-//        let btn = UIButton()
-//        btn.translatesAutoresizingMaskIntoConstraints = false
-//        btn.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-//        return btn
-//    }()
 
-    
-    
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController {
     var contentsTitle = ["Home", "Product List", "Account Info", "My Cart", "Order List", "About Us", "Terms & Conditions", "Support", "Logout"]
     
     
-    var respectiveImg = ["HomeDash","ProductList", "AccountInfo", "My Cart",  "Order List", "About Us", "Terms", "Support", "Logout"]
+    var respectiveImg = ["HomeDash","ProductList", "AccountInfo", "market",  "checklist", "About Us", "Terms", "Support", "Logout"]
     
 
     
@@ -88,6 +88,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         settingUpSideProfile()
+        
         
     }
     
@@ -151,7 +152,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.imgViewTitle.image = UIImage(named: respectiveImg[indexPath.row])?.withRenderingMode(.alwaysTemplate)
         
-        cell.imgViewTitle.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        cell.imgViewTitle.tintColor = .descriptionBtnColour
          return cell
     }
     

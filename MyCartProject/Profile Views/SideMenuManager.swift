@@ -12,10 +12,6 @@ import UIKit
 
 
 
-
-
-
-
 class SideMenuManager: NSObject, UIGestureRecognizerDelegate, ProfileViewControllerDelegate {
     
     private var sideMenuViewController: ProfileViewController!
@@ -35,11 +31,13 @@ class SideMenuManager: NSObject, UIGestureRecognizerDelegate, ProfileViewControl
         guard let view = viewController.view else { return }
         
         // Setup shadow view
-        sideMenuShadowView = UIView(frame: view.bounds)
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        sideMenuShadowView = UIVisualEffectView(effect: blurEffect)
+        sideMenuShadowView.frame = view.bounds
         sideMenuShadowView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        sideMenuShadowView.backgroundColor = .black
         sideMenuShadowView.alpha = 0.0
         view.addSubview(sideMenuShadowView)
+    
         
         // Setup side menu
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -72,6 +70,8 @@ class SideMenuManager: NSObject, UIGestureRecognizerDelegate, ProfileViewControl
         
         sideMenuShadowView.addGestureRecognizer(tapGestureRecognizer)
     }
+    
+    
     
     func toggleSideMenu() {
         sideMenuState(expanded: !isExpanded)

@@ -38,6 +38,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeOfProdCollectionViewCell.cellIdentifier, for: indexPath) as?
                     TypeOfProdCollectionViewCell else {fatalError("Unable deque cell...")}
             cell.cellData = typesOfProduct[indexPath.row]
+            
+            // Apply selection logic
+            if indexPath == selectedIndex {
+                cell.cellView.backgroundColor = .black
+                cell.titleProduct.textColor = .white
+                cell.imgView.tintColor = .white
+            } else {
+                cell.cellView.backgroundColor = .white
+                cell.titleProduct.textColor = .black
+                cell.imgView.tintColor = .black
+            }
+            
             return cell
             
             
@@ -116,6 +128,32 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return emptyHeader
         }
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            
+
+    
+            let previousIndex = selectedIndex
+                selectedIndex = indexPath
+
+                var indexesToReload = [indexPath]
+                if previousIndex != indexPath {
+                    indexesToReload.append(previousIndex)
+                }
+
+                collectionView.reloadItems(at: indexesToReload)
+            
+        default:
+            print("Default Print")
+        }
+        
+        
+    }
+    
+    
     
     
     

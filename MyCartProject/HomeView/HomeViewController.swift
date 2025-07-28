@@ -45,11 +45,14 @@ class HomeViewController: UIViewController {
      
     private var isSideMenuSetup = false
     
-    
+    //var selectedIndex: IndexPath? = nil
+
+    var selectedIndex: IndexPath = IndexPath(item: 0, section: 0)
+
     
      override func viewDidLoad() {
          super.viewDidLoad()
-        // view.backgroundColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
+        
          view.backgroundColor = .white
         // setupHeaderView()
          //sideMenuManager.setup(in: self)
@@ -60,8 +63,6 @@ class HomeViewController: UIViewController {
          configureUI()
          configureCompositionalLayout()
         
-         
-         //sideMenuManager.setup(in: self)
      }
      
     override func viewWillAppear(_ animated: Bool) {
@@ -122,18 +123,11 @@ extension HomeViewController {
         
         
         layout.register(SectionBackgroundView.self, forDecorationViewOfKind: SectionBackgroundView.elementKind)
-        
-      
-        
+    
         typeProductsCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
-    
-    
-
     //Defining First Section
-    
-    
     func typesOfProductsSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .estimated(80), // Reasonable starting estimate
@@ -174,11 +168,6 @@ extension HomeViewController {
     }
     
     
-    
-    
-    
-    
-    
     func bannerShowingSection() -> NSCollectionLayoutSection {
         //Item will take 100% of its group image
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
@@ -198,7 +187,6 @@ extension HomeViewController {
         
         return section
     }
-    
     
     
     func groceryShowingSection() -> NSCollectionLayoutSection {
@@ -221,9 +209,6 @@ extension HomeViewController {
         section.boundarySupplementaryItems = [
             .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind: "Header", alignment: .top)
         ]
-        
-        
-        
         
         return section
     }
@@ -253,14 +238,9 @@ extension HomeViewController {
         section.boundarySupplementaryItems = [
             .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind: "Header", alignment: .top)
         ]
-        
-        
-        
-        
+
         return section
     }
-    
-    
 }
 
 

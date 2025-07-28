@@ -21,7 +21,7 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    private let cellView: UIView = {
+    public let cellView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray6
@@ -30,18 +30,27 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private let titleProduct: UILabel = {
+    public let titleProduct: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont(name: "Helvetica-Bold", size: 14)
-       
         lbl.textAlignment = .center
         lbl.numberOfLines = 1
         // These are crucial for proper sizing
         lbl.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         lbl.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         return lbl
+    }()
+    
+    public let imgView:UIImageView = {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        if let image = UIImage(named: "Cosmetics")?.withRenderingMode(.alwaysTemplate) {
+            img.image = image
+        }
+        img.tintColor = .black
+        return img
     }()
     
     override init(frame: CGRect) {
@@ -57,6 +66,7 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
     private func setupViews() {
         contentView.addSubview(cellView)
         cellView.addSubview(titleProduct)
+        cellView.addSubview(imgView)
         
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -64,9 +74,14 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
             cellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
+            imgView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 7),
+            imgView.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
+            imgView.widthAnchor.constraint(equalToConstant: 16),
+            imgView.heightAnchor.constraint(equalToConstant: 16),
+            
             titleProduct.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
-            titleProduct.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 16),
-            titleProduct.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -16)
+            titleProduct.leadingAnchor.constraint(equalTo: imgView.trailingAnchor, constant: 4),
+            titleProduct.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -7)
         ])
         
         

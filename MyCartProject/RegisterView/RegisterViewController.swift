@@ -66,22 +66,29 @@ class RegisterViewController: UIViewController {
         isHidden: true
     )
     
+    lazy var loginBtn = CustomButton(
+        title: "Login",
+        fontName: "Montserrat-Bold",
+        fontSize: 24,
+        backgroundColor: .loginBtn,
+        titleColor: .white,
+        cornerRadius: 15,
+        target: self,
+        action: #selector(moveToTrendingProducts)
+    )
+
+    lazy var signUpBtn = CustomButton(
+        title: "Sign Up",
+        fontName: "Montserrat-SemiBold",
+        fontSize: 16,
+        backgroundColor: .clear,
+        titleColor: .descriptionBtnColour,
+        cornerRadius: 0,
+        target: self,
+        action: #selector(moveToRegisterScreen)
+    )
 
     
-    let loginBtn:UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Login", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.addTarget(self, action: #selector(moveToTrendingProducts), for: .touchUpInside)
-        btn.layer.cornerRadius = 15
-        btn.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 24)
-        //btn.backgroundColor = #colorLiteral(red: 0.7340531349, green: 0.5922076106, blue: 0.9028964043, alpha: 1)
-        btn.backgroundColor = .loginBtn
-
-        
-        return btn
-    }()
     
     
     let forgetPasswordBtn:UIButton = {
@@ -101,22 +108,11 @@ class RegisterViewController: UIViewController {
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.font = UIFont(name: "Montserrat-Medium", size: 16)
-        //lbl.backgroundColor = .brown
+        
         return lbl
     }()
     
-       
-    let signUpBtn:UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Sign Up", for: .normal)
-        btn.setTitleColor(.descriptionBtnColour, for: .normal)
-        btn.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 16)
-        btn.layer.cornerRadius = 0
-        btn.backgroundColor = .clear
-        btn.addTarget(self, action: #selector(moveToRegisterScreen), for: .touchUpInside)
-        return btn
-    }()
+    
     
 
     let scrollView = UIScrollView()
@@ -129,7 +125,9 @@ class RegisterViewController: UIViewController {
     
     var userEmailTopConstraint: NSLayoutConstraint!
     var confirmPasswordTopConstraint: NSLayoutConstraint!
-
+    
+    var loginBtnTopConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,8 +181,8 @@ class RegisterViewController: UIViewController {
         NSLayoutConstraint.activate([
                 iconImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
                 iconImg.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                iconImg.heightAnchor.constraint(equalToConstant: 120),
-                iconImg.widthAnchor.constraint(equalToConstant: 120),
+                iconImg.heightAnchor.constraint(equalToConstant: 105),
+                iconImg.widthAnchor.constraint(equalToConstant: 105),
             
         ])
     }
@@ -227,13 +225,11 @@ class RegisterViewController: UIViewController {
             userNmTxtFld.topAnchor.constraint(equalTo: welcomeLbl.bottomAnchor, constant: 30),
             userNmTxtFld.heightAnchor.constraint(equalToConstant: 40),
             
-            
-            
-           // userEmailIdTxtField.topAnchor.constraint(equalTo: userNmTxtFld.bottomAnchor, constant: 25),
+        
             userEmailTopConstraint,
             userEmailIdTxtField.leadingAnchor.constraint(equalTo: userNmTxtFld.leadingAnchor, constant: 0),
             userEmailIdTxtField.trailingAnchor.constraint(equalTo: userNmTxtFld.trailingAnchor, constant: 0),
-            //userEmailIdTxtField.heightAnchor.constraint(equalToConstant: 40),
+            
             
             passWordTxtField.topAnchor.constraint(equalTo: userEmailIdTxtField.bottomAnchor, constant: 25),
             passWordTxtField.leadingAnchor.constraint(equalTo: userNmTxtFld.leadingAnchor, constant: 0),
@@ -241,7 +237,7 @@ class RegisterViewController: UIViewController {
             passWordTxtField.heightAnchor.constraint(equalToConstant: 40),
             
             
-//            confirmPassWordTxtField.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 25),
+
             confirmPasswordTopConstraint,
             confirmPassWordTxtField.leadingAnchor.constraint(equalTo: userNmTxtFld.leadingAnchor, constant: 0),
             confirmPassWordTxtField.trailingAnchor.constraint(equalTo: userNmTxtFld.trailingAnchor, constant: 0),
@@ -254,14 +250,16 @@ class RegisterViewController: UIViewController {
     
     
     func setupButtons(){
+        
+        loginBtnTopConstraint = loginBtn.topAnchor.constraint(equalTo: confirmPassWordTxtField.bottomAnchor, constant: 70)
     
         NSLayoutConstraint.activate([
-            loginBtn.topAnchor.constraint(equalTo: confirmPassWordTxtField.bottomAnchor, constant: 30),
+            loginBtnTopConstraint,
             loginBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
             loginBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
             loginBtn.heightAnchor.constraint(equalToConstant: 50),
             
-            forgetPasswordBtn.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 10),
+            forgetPasswordBtn.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 12),
             //forgetPasswordBtn.leadingAnchor.constraint(equalTo: loginBtn.leadingAnchor),
             forgetPasswordBtn.trailingAnchor.constraint(equalTo: passWordTxtField.trailingAnchor),
             forgetPasswordBtn.heightAnchor.constraint(equalToConstant: 20),
@@ -392,6 +390,7 @@ class RegisterViewController: UIViewController {
             forgetPasswordBtn.isHidden = true
             
             welcomeLbl.text = "Sign Up"
+            loginBtnTopConstraint.constant = 35
             
         } else {
             
@@ -411,6 +410,8 @@ class RegisterViewController: UIViewController {
             loginBtn.setTitle("Login", for: .normal)
             forgetPasswordBtn.isHidden = false
             welcomeLbl.text = "Login"
+            
+            loginBtnTopConstraint.constant = 70
         }
         
     }

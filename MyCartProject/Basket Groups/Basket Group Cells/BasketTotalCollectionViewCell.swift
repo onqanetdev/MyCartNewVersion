@@ -43,20 +43,20 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setBackgroundImage(UIImage(systemName: "chevron.right.circle.fill"), for: .normal)
         btn.addTarget(self, action: #selector(applyCouponFieldShow), for: .touchUpInside)
-        //btn.tintColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        
         btn.tintColor = .applyBtnProceed
         return btn
     }()
     
     
     
-    //Payment Details View
+    //MARK: Payment Details View
     
     let paymentView:UIView = {
         let vw = UIView()
         vw.translatesAutoresizingMaskIntoConstraints = false
         vw.layer.cornerRadius = 20
-        //vw.backgroundColor = #colorLiteral(red: 0.8431372549, green: 0.7803921569, blue: 0.8862745098, alpha: 1)
+        
         vw.backgroundColor = .paymentDetailsBg
         return vw
     }()
@@ -65,7 +65,7 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Payment Details"
-        //lbl.textColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        
         lbl.textColor = .black
         return lbl
     }()
@@ -74,7 +74,6 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     let borderLine:UIView = {
         let borderLn = UIView()
         borderLn.translatesAutoresizingMaskIntoConstraints = false
-        //borderLn.backgroundColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
         borderLn.backgroundColor = .black
         return borderLn
     }()
@@ -184,7 +183,7 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         //txtField.backgroundColor = .blue
         txtField.layer.cornerRadius = 10
         txtField.layer.borderWidth = 1
-        //txtField.layer.borderColor = #colorLiteral(red: 0.3269538283, green: 0.1948716342, blue: 0.5487924814, alpha: 1)
+        
         txtField.layer.borderColor = UIColor.decreaseBtn.cgColor
         txtField.textAlignment = .center // Horizontally center text and placeholder
         txtField.addTarget(self, action: #selector(didBeginEditing), for: .editingDidBegin)
@@ -206,12 +205,54 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     var expandedViewHeight:NSLayoutConstraint!
     
     
+    //MARK: Address View
+
+    let addressView:UIView = {
+        let vw = UIView()
+        vw.translatesAutoresizingMaskIntoConstraints = false
+        vw.layer.cornerRadius = 20
+        vw.backgroundColor = .applyCouponBg
+        //vw.backgroundColor = .brown
+        return vw
+    }()
+    
+    let deliveryDetailsLbl:UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.text = "Deliver To"
+        lbl.textColor = .black
+        return lbl
+    }()
+    
+    let borderLineDelivery:UIView = {
+        let borderLn = UIView()
+        borderLn.translatesAutoresizingMaskIntoConstraints = false
+        borderLn.backgroundColor = .black
+        return borderLn
+    }()
+    
+    lazy var changeBtn = CustomButton(
+        title: "Change",
+        fontName: "Montserrat-Bold",
+        fontSize: 15,
+        backgroundColor: .black,
+        titleColor: .white,
+        cornerRadius: 12,
+        target: self,
+        action: nil
+    )
+    
+    
+    let addressViewBillNow = AddressDetailsView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         couponTextField.delegate = self
         setUpViewForApplyCoupon()
+        setUpAddressView()
         setUpViewForTotalAmount()
+       
         
     }
     
@@ -219,9 +260,7 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
-    
+
     func setUpViewForApplyCoupon(){
         contentView.addSubview(applyCouponCard)
         
@@ -306,7 +345,7 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         NSLayoutConstraint.activate([
             paymentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             paymentView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            paymentView.topAnchor.constraint(equalTo: expandedView.bottomAnchor, constant: 30),
+            paymentView.topAnchor.constraint(equalTo: addressView.bottomAnchor, constant: 30),
             paymentView.heightAnchor.constraint(equalToConstant: 190),
             
             
@@ -328,7 +367,41 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
             amountStackView.topAnchor.constraint(equalTo: borderLine.bottomAnchor, constant: 10) ])
     }
     
-    
+    func setUpAddressView(){
+        contentView.addSubview(addressView)
+        addressView.addSubview(deliveryDetailsLbl)
+        addressView.addSubview(borderLineDelivery)
+        addressView.addSubview(changeBtn)
+        addressViewBillNow.translatesAutoresizingMaskIntoConstraints = false
+        addressView.addSubview(addressViewBillNow)
+        
+        NSLayoutConstraint.activate([
+            addressView.topAnchor.constraint(equalTo: expandedView.bottomAnchor, constant: 25),
+            addressView.trailingAnchor.constraint(equalTo: contentView
+                .trailingAnchor, constant: -10),
+            addressView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            addressView.heightAnchor.constraint(equalToConstant: 200),
+            
+            deliveryDetailsLbl.leadingAnchor.constraint(equalTo: addressView.leadingAnchor, constant: 15),
+            deliveryDetailsLbl.topAnchor.constraint(equalTo: addressView.topAnchor, constant: 20),
+            
+            changeBtn.widthAnchor.constraint(equalToConstant: 80),
+            changeBtn.heightAnchor.constraint(equalToConstant: 40),
+            changeBtn.trailingAnchor.constraint(equalTo: addressView.trailingAnchor, constant: -15),
+            changeBtn.topAnchor.constraint(equalTo: addressView.topAnchor, constant: 10),
+            //changeBtn.centerYAnchor.constraint(equalTo: deliveryDetailsLbl.centerYAnchor),
+            
+            borderLineDelivery.heightAnchor.constraint(equalToConstant: 1),
+            borderLineDelivery.leadingAnchor.constraint(equalTo: addressView.leadingAnchor, constant: 15),
+            borderLineDelivery.trailingAnchor.constraint(equalTo: addressView.trailingAnchor, constant: -15),
+            borderLineDelivery.topAnchor.constraint(equalTo: changeBtn.bottomAnchor, constant: 10),
+            
+            addressViewBillNow.topAnchor.constraint(equalTo: borderLineDelivery.bottomAnchor, constant: 7),
+            addressViewBillNow.leadingAnchor.constraint(equalTo: borderLineDelivery.leadingAnchor, constant: 0),
+            addressViewBillNow.trailingAnchor.constraint(equalTo: borderLineDelivery.trailingAnchor, constant: 0),
+            addressViewBillNow.bottomAnchor.constraint(equalTo: addressView.bottomAnchor, constant: -3)
+        ])
+    }
     
     @objc func applyCouponFieldShow(){
         //print("Yayyy!!!!")

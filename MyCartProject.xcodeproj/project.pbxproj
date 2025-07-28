@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A8FBEBE2E335EF100425C88 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */; };
 		8A8FBEC02E33674D00425C88 /* CustomSignUpImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */; };
+		8A8FBEC22E33944200425C88 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEC12E33944200425C88 /* CustomButton.swift */; };
+		8A8FBEC52E339BCA00425C88 /* AddressDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEC42E339BCA00425C88 /* AddressDetailsView.swift */; };
 		8A91295D2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A91295C2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift */; };
 		8A9C6CBD2E277BA8001F5B01 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C6CBC2E277BA8001F5B01 /* MyAccountViewController.swift */; };
 		8A9C6CBF2E27828F001F5B01 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C6CBE2E27828F001F5B01 /* ProfileViewController.swift */; };
@@ -92,6 +94,8 @@
 /* Begin PBXFileReference section */
 		8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignUpImgView.swift; sourceTree = "<group>"; };
+		8A8FBEC12E33944200425C88 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		8A8FBEC42E339BCA00425C88 /* AddressDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDetailsView.swift; sourceTree = "<group>"; };
 		8A91295C2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTotalCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A9C6CBC2E277BA8001F5B01 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		8A9C6CBE2E27828F001F5B01 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -190,8 +194,17 @@
 			children = (
 				8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */,
 				8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */,
+				8A8FBEC12E33944200425C88 /* CustomButton.swift */,
 			);
 			path = Reusables;
+			sourceTree = "<group>";
+		};
+		8A8FBEC32E339B6700425C88 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				8A8FBEC42E339BCA00425C88 /* AddressDetailsView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		8A9C6CBB2E277B7A001F5B01 /* Profile Views */ = {
@@ -228,6 +241,7 @@
 		8AA622E12E210F2200693239 /* Basket Group Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8A8FBEC32E339B6700425C88 /* SubViews */,
 				8AA622E22E210F7700693239 /* BasketGroupCollectionViewCell.swift */,
 				8A91295C2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift */,
 			);
@@ -552,6 +566,7 @@
 				8AAFA69E2E1D442300289F78 /* ProductDetailViewController.swift in Sources */,
 				8ABC6A892E1BD5AD00BF8DC2 /* TrendingProductsViewController+Extension.swift in Sources */,
 				8AB10A332E17973C001ED82C /* LoginViewController.swift in Sources */,
+				8A8FBEC22E33944200425C88 /* CustomButton.swift in Sources */,
 				8AB10A272E178F42001ED82C /* TypeOfProdCollectionViewCell.swift in Sources */,
 				8AB10A1B2E178AF1001ED82C /* UIView+Extension.swift in Sources */,
 				8A8FBEBE2E335EF100425C88 /* CustomTextField.swift in Sources */,
@@ -566,6 +581,7 @@
 				8ABCAAEA2E28DCD900049B01 /* ProfileModel.swift in Sources */,
 				8AE0FE542E2F624F00FF24A4 /* UIColor+Extension.swift in Sources */,
 				8AA622E52E21122D00693239 /* RestaurantListModel.swift in Sources */,
+				8A8FBEC52E339BCA00425C88 /* AddressDetailsView.swift in Sources */,
 				8AB10A1D2E178B23001ED82C /* UIImage+Extension.swift in Sources */,
 				8AA41F552E1F876D002E127C /* ProductSegmentCollectionViewCell.swift in Sources */,
 				8AB10A182E178AAF001ED82C /* TrendingProductModel.swift in Sources */,

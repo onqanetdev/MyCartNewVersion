@@ -1,5 +1,5 @@
 //
-//  NotificationViewController.swift
+//  OrderHistoryViewController.swift
 //  MyCartProject
 //
 //  Created by Onqanet on 30/07/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController {
+class OrderHistoryViewController: UIViewController {
     
     let stickyHeaderVw : UIView = {
         let nv = UIView()
@@ -26,14 +26,14 @@ class NotificationViewController: UIViewController {
     }()
     
     
-    lazy var notificationTblView:UITableView = {
+    lazy var orderHistoryTblView:UITableView = {
         let tblView = UITableView()
         tblView.translatesAutoresizingMaskIntoConstraints = false
         tblView.separatorStyle = .none
         tblView.delegate = self
         tblView.dataSource = self
         tblView.backgroundColor = .white
-        tblView.register(NotificationTableViewCell.self, forCellReuseIdentifier: NotificationTableViewCell.cellIdentifier)
+        tblView.register(OrderHistoryTableViewCell.self, forCellReuseIdentifier: OrderHistoryTableViewCell.cellIdentifier)
         return tblView
     }()
     
@@ -56,7 +56,7 @@ class NotificationViewController: UIViewController {
     func configureUI(){
         view.addSubview(stickyHeaderVw)
 
-        view.addSubview(notificationTblView)
+        view.addSubview(orderHistoryTblView)
         stickyHeaderVw.addSubview(backgrounImg)
     }
     
@@ -78,7 +78,7 @@ class NotificationViewController: UIViewController {
             .font: UIFont.systemFont(ofSize: 18, weight: .bold) // Optional: custom font
         ]
         
-        navigationItem.title = "Notification"
+        navigationItem.title = "Order History"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
         
@@ -86,7 +86,7 @@ class NotificationViewController: UIViewController {
     }
     
     func setUpHeaderView(){
-        notificationTblView.setUp(to: view)
+        orderHistoryTblView.setUp(to: view)
         NSLayoutConstraint.activate([
             stickyHeaderVw.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stickyHeaderVw.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -110,16 +110,15 @@ class NotificationViewController: UIViewController {
 
 
 
-
-extension NotificationViewController:UITableViewDelegate, UITableViewDataSource {
+extension OrderHistoryViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notifications.count
+        return orderHistoryProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.cellIdentifier, for: indexPath) as? NotificationTableViewCell else {fatalError("Unable deque cell...")}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderHistoryTableViewCell.cellIdentifier, for: indexPath) as? OrderHistoryTableViewCell else {fatalError("Unable deque cell...")}
         cell.selectionStyle = .none
-        cell.cellData = notifications[indexPath.row]
+        cell.cellData = orderHistoryProducts[indexPath.row]
         return cell
     }
     

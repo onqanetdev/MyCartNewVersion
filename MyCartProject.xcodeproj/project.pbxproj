@@ -87,6 +87,9 @@
 		8AC08C062E39D7FF002AFD58 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08C052E39D7FF002AFD58 /* NotificationViewController.swift */; };
 		8AC08C092E39DC4F002AFD58 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08C082E39DC4F002AFD58 /* NotificationTableViewCell.swift */; };
 		8AC08C0C2E39E4B2002AFD58 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08C0B2E39E4A0002AFD58 /* NotificationModel.swift */; };
+		8AC08C0F2E39F1AB002AFD58 /* OrderHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08C0E2E39F19B002AFD58 /* OrderHistoryModel.swift */; };
+		8AC08C122E39F36A002AFD58 /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08C112E39F36A002AFD58 /* OrderHistoryTableViewCell.swift */; };
+		8AC08C142E39FD4A002AFD58 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08C132E39FD4A002AFD58 /* OrderHistoryViewController.swift */; };
 		8AD227AD2E1E24B1001C6504 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227AC2E1E24B1001C6504 /* UILabel+Extension.swift */; };
 		8AD227AF2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227AE2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift */; };
 		8AD227B22E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227B12E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift */; };
@@ -183,6 +186,9 @@
 		8AC08C052E39D7FF002AFD58 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		8AC08C082E39DC4F002AFD58 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		8AC08C0B2E39E4A0002AFD58 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		8AC08C0E2E39F19B002AFD58 /* OrderHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryModel.swift; sourceTree = "<group>"; };
+		8AC08C112E39F36A002AFD58 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		8AC08C132E39FD4A002AFD58 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		8AD227AC2E1E24B1001C6504 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8AD227AE2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductDetailViewController+Extension.swift"; sourceTree = "<group>"; };
 		8AD227B12E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -315,6 +321,7 @@
 		8AB109F42E17854E001ED82C /* MyCartProject */ = {
 			isa = PBXGroup;
 			children = (
+				8AC08C102E39F332002AFD58 /* Order HistoryVIews */,
 				8AC08C042E39D6D3002AFD58 /* NotificationViews */,
 				8A8FBEB82E33597D00425C88 /* Reusables */,
 				8A9C6CBB2E277B7A001F5B01 /* Profile Views */,
@@ -354,6 +361,7 @@
 		8AB10A0E2E17896C001ED82C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8AC08C0D2E39F180002AFD58 /* Order History Model */,
 				8AC08C0A2E39E48F002AFD58 /* Notification Model */,
 				8AD227B32E1E75BE001C6504 /* Product Details */,
 				8AB10A0F2E1789B8001ED82C /* FoodTopBannerModel.swift */,
@@ -508,6 +516,23 @@
 			path = "Notification Model";
 			sourceTree = "<group>";
 		};
+		8AC08C0D2E39F180002AFD58 /* Order History Model */ = {
+			isa = PBXGroup;
+			children = (
+				8AC08C0E2E39F19B002AFD58 /* OrderHistoryModel.swift */,
+			);
+			path = "Order History Model";
+			sourceTree = "<group>";
+		};
+		8AC08C102E39F332002AFD58 /* Order HistoryVIews */ = {
+			isa = PBXGroup;
+			children = (
+				8AC08C112E39F36A002AFD58 /* OrderHistoryTableViewCell.swift */,
+				8AC08C132E39FD4A002AFD58 /* OrderHistoryViewController.swift */,
+			);
+			path = "Order HistoryVIews";
+			sourceTree = "<group>";
+		};
 		8AD227B02E1E4004001C6504 /* ProductDetailsCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +657,7 @@
 			files = (
 				8A8FBEC02E33674D00425C88 /* CustomSignUpImgView.swift in Sources */,
 				8AAFA69E2E1D442300289F78 /* ProductDetailViewController.swift in Sources */,
+				8AC08C142E39FD4A002AFD58 /* OrderHistoryViewController.swift in Sources */,
 				8ABC6A892E1BD5AD00BF8DC2 /* TrendingProductsViewController+Extension.swift in Sources */,
 				8AB10A332E17973C001ED82C /* LoginViewController.swift in Sources */,
 				8A8FBEC22E33944200425C88 /* CustomButton.swift in Sources */,
@@ -653,6 +679,7 @@
 				8A8FBEC52E339BCA00425C88 /* AddressDetailsView.swift in Sources */,
 				8AB10A1D2E178B23001ED82C /* UIImage+Extension.swift in Sources */,
 				8AC08C0C2E39E4B2002AFD58 /* NotificationModel.swift in Sources */,
+				8AC08C122E39F36A002AFD58 /* OrderHistoryTableViewCell.swift in Sources */,
 				8AD3B6E42E38EB0E003D5493 /* ReUsableSampleView.swift in Sources */,
 				8AA41F552E1F876D002E127C /* ProductSegmentCollectionViewCell.swift in Sources */,
 				8A0AE5922E379D7D00F13CD5 /* ForgetPasswordViewController.swift in Sources */,
@@ -695,6 +722,7 @@
 				8A9C6CBD2E277BA8001F5B01 /* MyAccountViewController.swift in Sources */,
 				8ABCAAED2E28F4A000049B01 /* TestTestTestViewController.swift in Sources */,
 				8ABCAAE62E28AE4400049B01 /* MyAccountTblVC.swift in Sources */,
+				8AC08C0F2E39F1AB002AFD58 /* OrderHistoryModel.swift in Sources */,
 				8AD227B22E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift in Sources */,
 				8AB10A2D2E179064001ED82C /* TrendingProductCollectionViewCell.swift in Sources */,
 			);

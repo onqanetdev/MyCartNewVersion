@@ -182,8 +182,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         } else if contentsTitle[indexPath.row] == "Birthday Wishes List" {
             
             
-        }else if contentsTitle[indexPath.row] == "Groups" {
-            
+        }else if contentsTitle[indexPath.row] == "Order List" {
+            navigationController?.pushViewController(OrderHistoryViewController(), animated: true)
            
             
         } else if contentsTitle[indexPath.row] == "Logout" {

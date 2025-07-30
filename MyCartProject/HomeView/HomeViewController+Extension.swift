@@ -102,6 +102,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     self?.sideMenuManager.toggleSideMenu()
                 }
                 
+                header.onBellIconTapped = { [weak self] in
+                    self?.navigationController?.pushViewController(NotificationViewController(), animated: true)
+                }
+                
                 return header
                 
             case 2:

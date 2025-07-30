@@ -35,6 +35,8 @@ class AllProductsHeaderView: UICollectionReusableView {
 
     var onHamburgerTapped: (() -> Void)?
     
+    var onBellIconTapped: (() -> Void)?
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -236,7 +238,7 @@ class AllProductsHeaderView: UICollectionReusableView {
     @objc private func bellTapped() {
         print("Bell notification tapped")
         // Add your notification action here
-        
+        onBellIconTapped?()
     }
     
     

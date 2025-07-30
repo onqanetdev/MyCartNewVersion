@@ -6,24 +6,41 @@
 //
 
 import UIKit
+import Combine
+
+
 
 class TestTestTestViewController: UIViewController {
 
+
+    
+    @IBOutlet weak var userSearchTxtField: UITextField!
+    
+    
+    var cancellables = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        observeTextChanges()
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    private func observeTextChanges() {
+           NotificationCenter.default
+               .publisher(for: UITextField.textDidChangeNotification, object: userSearchTxtField)
+               .compactMap { ($0.object as? UITextField)?.text }
+               .sink { text in
+                   print("User typed: \(text)")
+               }
+               .store(in: &cancellables)
+       }
+   
 }
+
+
+
+
+

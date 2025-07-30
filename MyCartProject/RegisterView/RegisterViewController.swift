@@ -98,6 +98,7 @@ class RegisterViewController: UIViewController {
         btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 12)
         btn.setTitleColor(.black, for: .normal)
         btn.backgroundColor = .clear
+        btn.addTarget(self, action: #selector(nextScreen), for: .touchUpInside)
         return btn
     }()
     
@@ -414,6 +415,14 @@ class RegisterViewController: UIViewController {
             loginBtnTopConstraint.constant = 70
         }
         
+    }
+    
+    @objc func nextScreen() {
+        let vc = ForgetPasswordViewController()
+        //vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
     
 }

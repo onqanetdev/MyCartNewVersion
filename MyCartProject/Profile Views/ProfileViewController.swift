@@ -165,19 +165,19 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         if contentsTitle[indexPath.row] == "Account Info" {
             navigationController?.pushViewController(MyAccountViewController(), animated: true)
         } else if contentsTitle[indexPath.row] == "About Us" {
-            
+            navigationController?.pushViewController(AboutUsViewController(), animated: true)
             
         } else if contentsTitle[indexPath.row] == "Terms & Conditions" {
             
-            
+            navigationController?.pushViewController(TermsCondiViewController(), animated: true)
         } else if contentsTitle[indexPath.row] == "Support" {
-           
+            //navigationController?.pushViewController(Su, animated: <#T##Bool#>)
         } else if contentsTitle[indexPath.row] == "Catalogue" {
            
             
         } else if contentsTitle[indexPath.row] == "Contact List" {
            
-            
+            //navigationController.
             
         } else if contentsTitle[indexPath.row] == "Birthday Wishes List" {
             

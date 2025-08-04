@@ -183,17 +183,16 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             
             
         }else if contentsTitle[indexPath.row] == "Order List" {
-            navigationController?.pushViewController(OrderHistoryViewController(), animated: true)
-           
+//            navigationController?.pushViewController(OrderHistoryViewController(), animated: true)
+            let successVC = OrderSuccessViewController()
+            successVC.modalPresentationStyle = .fullScreen
+            present(successVC, animated: true)
             
         } else if contentsTitle[indexPath.row] == "Logout" {
             
             
         }
-        
-        
     }
-    
 }
 
 

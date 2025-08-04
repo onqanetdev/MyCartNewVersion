@@ -26,6 +26,8 @@ class OrderHistoryViewController: UIViewController {
     }()
     
     
+    //var examples = [73, 74, 75, 71, 69, 72, 76, 73]
+    //var examples = [30,40,50,60]
     lazy var orderHistoryTblView:UITableView = {
         let tblView = UITableView()
         tblView.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +53,8 @@ class OrderHistoryViewController: UIViewController {
         configureUI()
         setUpNavigation()
         setUpHeaderView()
+        
+        
     }
     
     func configureUI(){
@@ -106,6 +110,9 @@ class OrderHistoryViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    
+   
+    
 }
 
 

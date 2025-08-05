@@ -161,6 +161,7 @@ extension RegisterViewController: UITextFieldDelegate {
         registerView.scrollView.contentInset = contentInset
         registerView.scrollView.scrollIndicatorInsets = contentInset
     }
+    
 }
 
 

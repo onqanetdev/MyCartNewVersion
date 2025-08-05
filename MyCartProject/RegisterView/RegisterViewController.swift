@@ -44,7 +44,13 @@ class RegisterViewController: UIViewController {
     
     private func navigateToTrendingProducts() {
         // Implement your navigation logic here
+        self.navigationController?.pushViewController(HomeViewController(), animated: true)
     }
+    
+    private func navigateToOTPVerificationPage() {
+        self.navigationController?.pushViewController(OTPVeriVC(), animated: true)
+    }
+    
     
     private func navigateToForgetPassword() {
         let vc = ForgetPasswordViewController()
@@ -73,13 +79,17 @@ extension RegisterViewController: RegisterViewDelegate {
         } else if registerView.loginBtn.titleLabel?.text == "Sign Up" {
             // Handle sign up logic
             // ...
+            
+            registerView.configureForSignUpState()
         } else if registerView.loginBtn.titleLabel?.text == "Get OTP" {
             // Handle get OTP logic
             // ...
+            navigateToOTPVerificationPage()
         }
     }
     
     func didTapSignUpButton() {
+        
         if registerView.signUpBtn.titleLabel?.text == "Sign Up" {
             registerView.configureForSignUpState()
         } else {

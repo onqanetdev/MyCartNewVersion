@@ -93,6 +93,8 @@
 		8AC16C2E2E3B4C2200A84C53 /* OrderSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC16C2D2E3B4C2200A84C53 /* OrderSuccessViewController.swift */; };
 		8AC36FA92E40B0F800488152 /* RegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC36FA82E40B0ED00488152 /* RegisterDelegate.swift */; };
 		8AC36FAD2E40B16A00488152 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC36FAC2E40B16A00488152 /* RegisterView.swift */; };
+		8AC36FB02E40B83000488152 /* OTPVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC36FAF2E40B83000488152 /* OTPVerificationView.swift */; };
+		8AC36FB22E40C0DE00488152 /* OTPVeriVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC36FB12E40C0DE00488152 /* OTPVeriVC.swift */; };
 		8AC556EF2E3C775F00201515 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC556EE2E3C775F00201515 /* OrderDetailsViewController.swift */; };
 		8AD227AD2E1E24B1001C6504 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227AC2E1E24B1001C6504 /* UILabel+Extension.swift */; };
 		8AD227AF2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227AE2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift */; };
@@ -196,6 +198,8 @@
 		8AC16C2D2E3B4C2200A84C53 /* OrderSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSuccessViewController.swift; sourceTree = "<group>"; };
 		8AC36FA82E40B0ED00488152 /* RegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDelegate.swift; sourceTree = "<group>"; };
 		8AC36FAC2E40B16A00488152 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		8AC36FAF2E40B83000488152 /* OTPVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationView.swift; sourceTree = "<group>"; };
+		8AC36FB12E40C0DE00488152 /* OTPVeriVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVeriVC.swift; sourceTree = "<group>"; };
 		8AC556EE2E3C775F00201515 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		8AD227AC2E1E24B1001C6504 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8AD227AE2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductDetailViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -438,6 +442,7 @@
 		8AB10A382E17E5D8001ED82C /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
+				8AC36FAE2E40B7DB00488152 /* Get OTP Fieldds */,
 				8A0AE58F2E379D1400F13CD5 /* Forget Password Views */,
 				8AC36FA82E40B0ED00488152 /* RegisterDelegate.swift */,
 				8AB10A392E17E5FC001ED82C /* RegisterViewController.swift */,
@@ -543,6 +548,15 @@
 				8AC556EE2E3C775F00201515 /* OrderDetailsViewController.swift */,
 			);
 			path = "Order VIews";
+			sourceTree = "<group>";
+		};
+		8AC36FAE2E40B7DB00488152 /* Get OTP Fieldds */ = {
+			isa = PBXGroup;
+			children = (
+				8AC36FAF2E40B83000488152 /* OTPVerificationView.swift */,
+				8AC36FB12E40C0DE00488152 /* OTPVeriVC.swift */,
+			);
+			path = "Get OTP Fieldds";
 			sourceTree = "<group>";
 		};
 		8AD227B02E1E4004001C6504 /* ProductDetailsCells */ = {
@@ -727,12 +741,14 @@
 				8AC556EF2E3C775F00201515 /* OrderDetailsViewController.swift in Sources */,
 				8AB10A3C2E17E7C6001ED82C /* RegisterViewController+Extension.swift in Sources */,
 				8AC08C092E39DC4F002AFD58 /* NotificationTableViewCell.swift in Sources */,
+				8AC36FB22E40C0DE00488152 /* OTPVeriVC.swift in Sources */,
 				8AB10A292E178F61001ED82C /* BannerCollectionViewCell.swift in Sources */,
 				8AD227B52E1E766A001C6504 /* ProductDetailModel.swift in Sources */,
 				8AD227B72E1E7963001C6504 /* ProductDetailsCollectionViewCell.swift in Sources */,
 				8AD3B6ED2E38F568003D5493 /* AboutUsViewController.swift in Sources */,
 				8AC36FA92E40B0F800488152 /* RegisterDelegate.swift in Sources */,
 				8AD227AF2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift in Sources */,
+				8AC36FB02E40B83000488152 /* OTPVerificationView.swift in Sources */,
 				8AB10A302E179198001ED82C /* SectionBackgroundView.swift in Sources */,
 				8A9C6CBD2E277BA8001F5B01 /* MyAccountViewController.swift in Sources */,
 				8ABCAAED2E28F4A000049B01 /* TestTestTestViewController.swift in Sources */,

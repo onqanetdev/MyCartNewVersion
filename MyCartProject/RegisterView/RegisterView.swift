@@ -15,7 +15,7 @@ class RegisterView: UIView {
     
     let wholeBackgroundImg = CustomSignUpImgView(imageName: "BGMain")
     let deliveryBoyImg = CustomSignUpImgView(imageName: "DeliveryIcon")
-    let iconImg = CustomSignUpImgView(imageName: "launch_Screen", cornerRadius: 5)
+    //let iconImg = CustomSignUpImgView(imageName: "", cornerRadius: 5)
     
     let welcomeLbl: UILabel = {
         let lbl = UILabel()
@@ -145,7 +145,8 @@ class RegisterView: UIView {
     private var passwordTextFieldTopConstraint: NSLayoutConstraint!
     private var passwordTextFieldHeightConstraint: NSLayoutConstraint!
     private var loginBtnTopConstraint: NSLayoutConstraint!
-    
+    private var orLabelTopConstraint: NSLayoutConstraint!
+    private var forgetPasswordTopConstraint: NSLayoutConstraint!
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -194,7 +195,7 @@ class RegisterView: UIView {
     
     private func setupConstraints() {
         let allSubviews: [UIView] = [
-            iconImg, deliveryBoyImg, welcomeLbl, userNmTxtFld, userEmailIdTxtField,
+             deliveryBoyImg, welcomeLbl, userNmTxtFld, userEmailIdTxtField,
             passWordTxtField, confirmPassWordTxtField, loginBtn, forgetPasswordBtn,
             doNotHaveLbl, signUpBtn, orLabel, checkMarkBtn, loginWithOTPLbl
         ]
@@ -209,21 +210,22 @@ class RegisterView: UIView {
         passwordTextFieldHeightConstraint = passWordTxtField.heightAnchor.constraint(equalToConstant: 40)
         loginBtnTopConstraint = loginBtn.topAnchor.constraint(equalTo: confirmPassWordTxtField.bottomAnchor, constant: 70)
         
+        orLabelTopConstraint = orLabel.topAnchor.constraint(equalTo: forgetPasswordBtn.topAnchor, constant: 2) // Corrected
+        
+        forgetPasswordTopConstraint = forgetPasswordBtn.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 12)
+        
         NSLayoutConstraint.activate([
             wholeBackgroundImg.topAnchor.constraint(equalTo: topAnchor),
             wholeBackgroundImg.leadingAnchor.constraint(equalTo: leadingAnchor),
             wholeBackgroundImg.trailingAnchor.constraint(equalTo: trailingAnchor),
             wholeBackgroundImg.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            iconImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
-            iconImg.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            iconImg.heightAnchor.constraint(equalToConstant: 105),
-            iconImg.widthAnchor.constraint(equalToConstant: 105),
+
             
-            deliveryBoyImg.topAnchor.constraint(equalTo: iconImg.bottomAnchor, constant: 10),
+            deliveryBoyImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 135),
             deliveryBoyImg.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             deliveryBoyImg.widthAnchor.constraint(equalToConstant: 300),
-            deliveryBoyImg.heightAnchor.constraint(equalToConstant: 180),
+            deliveryBoyImg.heightAnchor.constraint(equalToConstant: 160),
             
             welcomeLbl.topAnchor.constraint(equalTo: deliveryBoyImg.bottomAnchor, constant: 10),
             welcomeLbl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25),
@@ -253,12 +255,13 @@ class RegisterView: UIView {
             loginBtn.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -60),
             loginBtn.heightAnchor.constraint(equalToConstant: 50),
             
-            forgetPasswordBtn.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 12),
+//            forgetPasswordBtn.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 12),
+            forgetPasswordTopConstraint,
             forgetPasswordBtn.trailingAnchor.constraint(equalTo: passWordTxtField.trailingAnchor),
             forgetPasswordBtn.heightAnchor.constraint(equalToConstant: 20),
             forgetPasswordBtn.widthAnchor.constraint(equalToConstant: 130),
             
-            orLabel.topAnchor.constraint(equalTo: forgetPasswordBtn.topAnchor, constant: 2),
+            orLabelTopConstraint,
             orLabel.leadingAnchor.constraint(equalTo: userNmTxtFld.leadingAnchor),
             
             checkMarkBtn.topAnchor.constraint(equalTo: orLabel.bottomAnchor, constant: 3),
@@ -310,6 +313,13 @@ class RegisterView: UIView {
         
         loginBtnTopConstraint.constant = 70
         
+         
+        orLabelTopConstraint.isActive = true
+        forgetPasswordTopConstraint.isActive = true
+        orLabel.isHidden = false
+        checkMarkBtn.isHidden = false
+        loginWithOTPLbl.isHidden = false
+        
         // Reset OTP state
         configureForPasswordLogin()
     }
@@ -328,12 +338,17 @@ class RegisterView: UIView {
         confirmPassWordTxtField.isHidden = false
         confirmPassWordTxtFieldHeightConstraint.constant = 40
         confirmPasswordTopConstraint.constant = 25
-        
         passWordTxtField.returnKeyType = .next
-        forgetPasswordBtn.isHidden = true
-        
+    
         loginBtnTopConstraint.constant = 35
         
+        orLabel.isHidden = true
+        forgetPasswordBtn.isHidden = true
+        
+        orLabelTopConstraint.isActive = false
+        forgetPasswordTopConstraint.isActive = false
+        checkMarkBtn.isHidden = true
+        loginWithOTPLbl.isHidden = true
         // Reset OTP state
         configureForPasswordLogin()
     }
@@ -347,7 +362,7 @@ class RegisterView: UIView {
         
         forgetPasswordBtn.isHidden = true
         orLabel.isHidden = true
-        
+        userNmTxtFld.text = "Mobile No."
         checkMarkBtn.setBackgroundImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
         checkMarkBtn.tintColor = .detailView
     }
@@ -361,7 +376,7 @@ class RegisterView: UIView {
         
         forgetPasswordBtn.isHidden = false
         orLabel.isHidden = false
-        
+        userNmTxtFld.text = "Username"
         checkMarkBtn.setBackgroundImage(UIImage(systemName: "square"), for: .normal)
         checkMarkBtn.tintColor = .darkGray
     }
@@ -373,6 +388,7 @@ class RegisterView: UIView {
     }
     
     @objc private func signUpButtonTapped() {
+        
         delegate?.didTapSignUpButton()
     }
     

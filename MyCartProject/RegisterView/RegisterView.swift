@@ -31,7 +31,7 @@ class RegisterView: UIView {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "or"
         lbl.textColor = .descriptionBtnColour
-        lbl.font = UIFont(name: "Montserrat-SemiBold", size: 14)
+        lbl.font = UIFont(name: "Montserrat-SemiBold", size: 16)
         return lbl
     }()
     
@@ -137,17 +137,27 @@ class RegisterView: UIView {
     
     let scrollView = UIScrollView()
     let contentView = UIView()
-
+    
     private var confirmPassWordTxtFieldHeightConstraint: NSLayoutConstraint!
     private var userEmailTxtFieldHeightConstraint: NSLayoutConstraint!
     private var userEmailTopConstraint: NSLayoutConstraint!
     private var confirmPasswordTopConstraint: NSLayoutConstraint!
     private var passwordTextFieldTopConstraint: NSLayoutConstraint!
     private var passwordTextFieldHeightConstraint: NSLayoutConstraint!
-    private var loginBtnTopConstraint: NSLayoutConstraint!
+    //private var loginBtnTopConstraint: NSLayoutConstraint!
     private var orLabelTopConstraint: NSLayoutConstraint!
     private var forgetPasswordTopConstraint: NSLayoutConstraint!
+    
+    private var loginBtnTopConstraintForLogin: NSLayoutConstraint!
+    private var loginBtnTopConstraintForSignUp: NSLayoutConstraint!
+    private var loginBtnTopConstraintForOTPGet: NSLayoutConstraint!
+    
+    
+    private var checkmarkTopConstraintForOTP: NSLayoutConstraint!
+    private var checkmarkTopConstraintForLogin: NSLayoutConstraint!
     // MARK: - Initialization
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -195,7 +205,7 @@ class RegisterView: UIView {
     
     private func setupConstraints() {
         let allSubviews: [UIView] = [
-             deliveryBoyImg, welcomeLbl, userNmTxtFld, userEmailIdTxtField,
+            deliveryBoyImg, welcomeLbl, userNmTxtFld, userEmailIdTxtField,
             passWordTxtField, confirmPassWordTxtField, loginBtn, forgetPasswordBtn,
             doNotHaveLbl, signUpBtn, orLabel, checkMarkBtn, loginWithOTPLbl
         ]
@@ -208,11 +218,19 @@ class RegisterView: UIView {
         confirmPasswordTopConstraint = confirmPassWordTxtField.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 0)
         passwordTextFieldTopConstraint = passWordTxtField.topAnchor.constraint(equalTo: userEmailIdTxtField.bottomAnchor, constant: 25)
         passwordTextFieldHeightConstraint = passWordTxtField.heightAnchor.constraint(equalToConstant: 40)
-        loginBtnTopConstraint = loginBtn.topAnchor.constraint(equalTo: confirmPassWordTxtField.bottomAnchor, constant: 70)
         
-        orLabelTopConstraint = orLabel.topAnchor.constraint(equalTo: forgetPasswordBtn.topAnchor, constant: 2) // Corrected
+        //        loginBtnTopConstraint = loginBtn.topAnchor.constraint(equalTo: checkMarkBtn.bottomAnchor, constant: 30)
+        
+        loginBtnTopConstraintForLogin = loginBtn.topAnchor.constraint(equalTo: checkMarkBtn.bottomAnchor, constant: 30)
+        loginBtnTopConstraintForSignUp = loginBtn.topAnchor.constraint(equalTo: confirmPassWordTxtField.bottomAnchor, constant: 35)
+        loginBtnTopConstraintForOTPGet = loginBtn.topAnchor.constraint(equalTo: checkMarkBtn.bottomAnchor, constant: 35)
+        
+        orLabelTopConstraint = orLabel.topAnchor.constraint(equalTo: forgetPasswordBtn.bottomAnchor, constant: 0) // Corrected
         
         forgetPasswordTopConstraint = forgetPasswordBtn.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 12)
+        
+        checkmarkTopConstraintForOTP = checkMarkBtn.topAnchor.constraint(equalTo: userNmTxtFld.bottomAnchor, constant: 20)
+        checkmarkTopConstraintForLogin = checkMarkBtn.topAnchor.constraint(equalTo: orLabel.bottomAnchor, constant: 14)
         
         NSLayoutConstraint.activate([
             wholeBackgroundImg.topAnchor.constraint(equalTo: topAnchor),
@@ -220,7 +238,7 @@ class RegisterView: UIView {
             wholeBackgroundImg.trailingAnchor.constraint(equalTo: trailingAnchor),
             wholeBackgroundImg.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-
+            
             
             deliveryBoyImg.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 135),
             deliveryBoyImg.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
@@ -250,12 +268,12 @@ class RegisterView: UIView {
             confirmPassWordTxtField.leadingAnchor.constraint(equalTo: userNmTxtFld.leadingAnchor),
             confirmPassWordTxtField.trailingAnchor.constraint(equalTo: userNmTxtFld.trailingAnchor),
             
-            loginBtnTopConstraint,
+            //loginBtnTopConstraint,
             loginBtn.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 60),
             loginBtn.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -60),
             loginBtn.heightAnchor.constraint(equalToConstant: 50),
             
-//            forgetPasswordBtn.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 12),
+            //            forgetPasswordBtn.topAnchor.constraint(equalTo: passWordTxtField.bottomAnchor, constant: 12),
             forgetPasswordTopConstraint,
             forgetPasswordBtn.trailingAnchor.constraint(equalTo: passWordTxtField.trailingAnchor),
             forgetPasswordBtn.heightAnchor.constraint(equalToConstant: 20),
@@ -264,7 +282,8 @@ class RegisterView: UIView {
             orLabelTopConstraint,
             orLabel.leadingAnchor.constraint(equalTo: userNmTxtFld.leadingAnchor),
             
-            checkMarkBtn.topAnchor.constraint(equalTo: orLabel.bottomAnchor, constant: 3),
+            //checkMarkBtn.topAnchor.constraint(equalTo: orLabel.bottomAnchor, constant: 14),
+            
             checkMarkBtn.leadingAnchor.constraint(equalTo: orLabel.leadingAnchor),
             checkMarkBtn.widthAnchor.constraint(equalToConstant: 25),
             checkMarkBtn.heightAnchor.constraint(equalToConstant: 25),
@@ -311,14 +330,22 @@ class RegisterView: UIView {
         passWordTxtField.returnKeyType = .go
         forgetPasswordBtn.isHidden = false
         
-        loginBtnTopConstraint.constant = 70
+        //loginBtnTopConstraint.constant = 70
+        //loginBtnTopConstraint = loginBtn.topAnchor.constraint(equalTo: checkMarkBtn.bottomAnchor, constant: 30)
         
-         
+        // Deactivate sign up constraint, activate login constraint
+        loginBtnTopConstraintForSignUp.isActive = false
+        loginBtnTopConstraintForLogin.isActive = true
+        loginBtnTopConstraintForOTPGet.isActive = false
+        
+        
         orLabelTopConstraint.isActive = true
         forgetPasswordTopConstraint.isActive = true
         orLabel.isHidden = false
         checkMarkBtn.isHidden = false
         loginWithOTPLbl.isHidden = false
+        checkmarkTopConstraintForLogin.isActive = true
+        checkmarkTopConstraintForOTP.isActive = false
         
         // Reset OTP state
         configureForPasswordLogin()
@@ -339,8 +366,17 @@ class RegisterView: UIView {
         confirmPassWordTxtFieldHeightConstraint.constant = 40
         confirmPasswordTopConstraint.constant = 25
         passWordTxtField.returnKeyType = .next
-    
-        loginBtnTopConstraint.constant = 35
+        
+        // loginBtnTopConstraint.constant = 35
+        //        loginBtnTopConstraint.isActive = true
+        //        loginBtnTopConstraint = loginBtn.topAnchor.constraint(equalTo: confirmPassWordTxtField.bottomAnchor, constant: 70)
+        
+        
+        // Deactivate login constraint, activate sign up constraint
+        loginBtnTopConstraintForLogin.isActive = false
+        loginBtnTopConstraintForSignUp.isActive = true
+        loginBtnTopConstraintForOTPGet.isActive = false
+        
         
         orLabel.isHidden = true
         forgetPasswordBtn.isHidden = true
@@ -349,6 +385,10 @@ class RegisterView: UIView {
         forgetPasswordTopConstraint.isActive = false
         checkMarkBtn.isHidden = true
         loginWithOTPLbl.isHidden = true
+        
+        // Since we're hiding the checkmark, we need to deactivate its positioning constraint too.
+        checkmarkTopConstraintForOTP.isActive = false
+        checkmarkTopConstraintForLogin.isActive = true
         // Reset OTP state
         configureForPasswordLogin()
     }
@@ -359,10 +399,30 @@ class RegisterView: UIView {
         passwordTextFieldTopConstraint.constant = 0
         passwordTextFieldHeightConstraint.constant = 0
         passWordTxtField.isHidden = true
+        //passwordTextFieldTopConstraint.isActive = false
+        //passwordTextFieldHeightConstraint.isActive = false
+        
+        confirmPassWordTxtFieldHeightConstraint.constant = 0
+        userEmailTxtFieldHeightConstraint.constant = 0
+        userEmailTopConstraint.constant = 0
+        confirmPasswordTopConstraint.constant = 0
+        orLabelTopConstraint.constant = 0
+        forgetPasswordTopConstraint.constant = 0
+        
         
         forgetPasswordBtn.isHidden = true
         orLabel.isHidden = true
         userNmTxtFld.text = "Mobile No."
+        
+        
+        loginBtnTopConstraintForLogin.isActive = false
+        loginBtnTopConstraintForSignUp.isActive = false
+        loginBtnTopConstraintForOTPGet.isActive = true
+        
+        // This is the key fix: activate the new checkmark constraint
+        checkmarkTopConstraintForOTP.isActive = true
+        checkmarkTopConstraintForLogin.isActive = false
+        
         checkMarkBtn.setBackgroundImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
         checkMarkBtn.tintColor = .detailView
     }

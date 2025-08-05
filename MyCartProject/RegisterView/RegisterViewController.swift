@@ -105,7 +105,8 @@ extension RegisterViewController: RegisterViewDelegate {
         if isChecked {
             registerView.configureForOTPLogin()
         } else {
-            registerView.configureForPasswordLogin()
+            //registerView.configureForPasswordLogin()
+            registerView.configureForLoginState()
         }
     }
 }

@@ -27,6 +27,9 @@
 		8AA622E02E210E1D00693239 /* BasketGroupViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA622DF2E210E1C00693239 /* BasketGroupViewController+Extension.swift */; };
 		8AA622E32E210F7700693239 /* BasketGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA622E22E210F7700693239 /* BasketGroupCollectionViewCell.swift */; };
 		8AA622E52E21122D00693239 /* RestaurantListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA622E42E21122D00693239 /* RestaurantListModel.swift */; };
+		8AAB199F2E446D1D009482A3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB199E2E446D1D009482A3 /* MainTabBarController.swift */; };
+		8AAB19A12E44CB4C009482A3 /* CustomSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB19A02E44CB4C009482A3 /* CustomSideMenuView.swift */; };
+		8AAB19A32E44CBAF009482A3 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB19A22E44CBAF009482A3 /* CategoriesViewController.swift */; };
 		8AAFA6992E1CE62200289F78 /* TrendingProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAFA6982E1CE62200289F78 /* TrendingProductsCell.swift */; };
 		8AAFA69B2E1D007100289F78 /* AllTrendingProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAFA69A2E1D007100289F78 /* AllTrendingProducts.swift */; };
 		8AAFA69E2E1D442300289F78 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAFA69D2E1D442300289F78 /* ProductDetailViewController.swift */; };
@@ -131,6 +134,9 @@
 		8AA622DF2E210E1C00693239 /* BasketGroupViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasketGroupViewController+Extension.swift"; sourceTree = "<group>"; };
 		8AA622E22E210F7700693239 /* BasketGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketGroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AA622E42E21122D00693239 /* RestaurantListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListModel.swift; sourceTree = "<group>"; };
+		8AAB199E2E446D1D009482A3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		8AAB19A02E44CB4C009482A3 /* CustomSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuView.swift; sourceTree = "<group>"; };
+		8AAB19A22E44CBAF009482A3 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		8AAFA6982E1CE62200289F78 /* TrendingProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingProductsCell.swift; sourceTree = "<group>"; };
 		8AAFA69A2E1D007100289F78 /* AllTrendingProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrendingProducts.swift; sourceTree = "<group>"; };
 		8AAFA69D2E1D442300289F78 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +370,9 @@
 				8AB10A002E178550001ED82C /* LaunchScreen.storyboard */,
 				8AB10A032E178550001ED82C /* Info.plist */,
 				8AD227B82E1E7CA3001C6504 /* StarRatingViewController.swift */,
+				8AAB199E2E446D1D009482A3 /* MainTabBarController.swift */,
+				8AAB19A02E44CB4C009482A3 /* CustomSideMenuView.swift */,
+				8AAB19A22E44CBAF009482A3 /* CategoriesViewController.swift */,
 			);
 			path = MyCartProject;
 			sourceTree = "<group>";
@@ -706,12 +715,14 @@
 				8AA622DE2E20EBF000693239 /* BasketGroupViewController.swift in Sources */,
 				8AB10A3A2E17E5FC001ED82C /* RegisterViewController.swift in Sources */,
 				8AC36FAD2E40B16A00488152 /* RegisterView.swift in Sources */,
+				8AAB19A32E44CBAF009482A3 /* CategoriesViewController.swift in Sources */,
 				8AB10A0D2E178930001ED82C /* HomeViewController+Extension.swift in Sources */,
 				8A91295D2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift in Sources */,
 				8AB10A202E178D9A001ED82C /* GroceryKitchenHeaderView.swift in Sources */,
 				8AB109FA2E17854E001ED82C /* ViewController.swift in Sources */,
 				8ABCAAEA2E28DCD900049B01 /* ProfileModel.swift in Sources */,
 				8AE0FE542E2F624F00FF24A4 /* UIColor+Extension.swift in Sources */,
+				8AAB199F2E446D1D009482A3 /* MainTabBarController.swift in Sources */,
 				8AA622E52E21122D00693239 /* RestaurantListModel.swift in Sources */,
 				8AD3B6E92E38EC8B003D5493 /* PrivacyViewController.swift in Sources */,
 				8A8FBEC52E339BCA00425C88 /* AddressDetailsView.swift in Sources */,
@@ -744,6 +755,7 @@
 				8AB10A0B2E178891001ED82C /* HomeViewController.swift in Sources */,
 				8AD227AD2E1E24B1001C6504 /* UILabel+Extension.swift in Sources */,
 				8AB10A242E178DE7001ED82C /* AllProductsHeaderView.swift in Sources */,
+				8AAB19A12E44CB4C009482A3 /* CustomSideMenuView.swift in Sources */,
 				8AA622E02E210E1D00693239 /* BasketGroupViewController+Extension.swift in Sources */,
 				8AA622E32E210F7700693239 /* BasketGroupCollectionViewCell.swift in Sources */,
 				8AB10A352E17AC83001ED82C /* UITextField+Extension.swift in Sources */,

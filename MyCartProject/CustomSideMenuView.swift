@@ -1,0 +1,84 @@
+//
+//  CustomSideMenuView.swift
+//  MyCartProject
+//
+//  Created by Onqanet on 07/08/25.
+//
+
+import UIKit
+
+class CustomSideMenuView:  UIView, UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: - Properties
+    private let tableView = UITableView()
+    private let menuItems = ["Chips & Wafers", "Bhujia & Mixtures", "Namkeen Snacks", "Nachos", "Healthy Snacks", "Popcorn", "Papad & Fryums", "Premium"]
+
+    // MARK: - Initialization
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has been implemented")
+    }
+
+    // MARK: - Setup
+    private func setupView() {
+        backgroundColor = .yellow // Set background color for the side menu itself
+        layer.cornerRadius = 10 // Rounded corners for the side menu
+        layer.shadowColor = UIColor.purple.cgColor
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 5
+
+        // Configure the table view
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuItemCell")
+        tableView.separatorStyle = .none // No separators between cells
+        tableView.backgroundColor = .clear // Make table view background clear to show parent view's background
+        tableView.showsVerticalScrollIndicator = false
+
+        // Add table view to the side menu view
+        addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        // Set up constraints for the table view to fill the CustomSideMenuView
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: topAnchor, constant: 0), // Padding from top
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10), // Padding from left
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10), // Padding from right
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20) // Padding from bottom
+        ])
+    }
+
+    // MARK: - UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuItems.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath)
+        cell.textLabel?.text = menuItems[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        cell.textLabel?.textColor = .darkGray
+        cell.selectionStyle = .none // No selection highlight
+        cell.backgroundColor = .clear // Make cell background clear
+        return cell
+    }
+
+    // MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected: \(menuItems[indexPath.row])")
+        // You can add logic here to handle menu item selection, e.g., notify a delegate
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50 // Height for each row
+    }
+}
+
+
+
+

@@ -46,12 +46,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 cell.cellView.backgroundColor = .clear
                 cell.titleProduct.textColor = .white
                 cell.imgView.tintColor = .white
-                cell.underlineView.backgroundColor = .black
+                cell.underlineView.backgroundColor = .white
+                cell.heightView.isHidden = false
             } else {
                 cell.cellView.backgroundColor = .clear
                 cell.titleProduct.textColor = .white
                 cell.imgView.tintColor = .white
-                cell.underlineView.backgroundColor = .clear
+                cell.underlineView.backgroundColor = .white
+                cell.heightView.isHidden = true
             }
             
             return cell

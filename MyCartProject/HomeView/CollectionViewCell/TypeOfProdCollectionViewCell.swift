@@ -66,6 +66,16 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
         v.backgroundColor = .yellow
         return v
     }()
+    
+    public let heightView: UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = .black
+        v.layer.cornerRadius = 10
+        v.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner] // Top-left & top-right
+        v.clipsToBounds = true
+        return v
+    }()
 
     // MARK: - Init --------------------------------------------------------------
 
@@ -85,6 +95,7 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
         cellView.addSubview(titleProduct)
         cellView.addSubview(imgView)
         cellView.addSubview(underlineView)
+        cellView.addSubview(heightView)
 
         NSLayoutConstraint.activate([
             // cellView fills the whole contentView
@@ -94,14 +105,14 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
             cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 
             // Image at the top-centre
-            imgView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 2),
+            imgView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 0),
             imgView.centerXAnchor.constraint(equalTo: cellView.centerXAnchor),
-            imgView.widthAnchor.constraint(equalToConstant: 16),
+            imgView.widthAnchor.constraint(equalToConstant: 18),
             imgView.heightAnchor.constraint(equalToConstant: 16),
 
             // Title just below the image with horizontal padding
             titleProduct.centerXAnchor.constraint(equalTo: cellView.centerXAnchor),
-            titleProduct.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 1),
+            titleProduct.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 8),
             titleProduct.leadingAnchor.constraint(greaterThanOrEqualTo: cellView.leadingAnchor, constant: 12),
             titleProduct.trailingAnchor.constraint(lessThanOrEqualTo: cellView.trailingAnchor, constant: -12),
 
@@ -110,7 +121,15 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
             underlineView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor),
             underlineView.trailingAnchor.constraint(equalTo: cellView.trailingAnchor),
             underlineView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor),
-            underlineView.heightAnchor.constraint(equalToConstant: 4)
+            underlineView.heightAnchor.constraint(equalToConstant: 1),
+            
+            heightView.heightAnchor.constraint(equalToConstant: 4.5),
+            heightView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 0),
+            heightView.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: 0),
+           heightView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: 0),
+//            heightView.widthAnchor.constraint(equalTo: titleProduct.widthAnchor),
+            
+            
         ])
     }
 
@@ -153,4 +172,8 @@ class TypeOfProdCollectionViewCell: UICollectionViewCell {
         return newLayoutAttributes
     }
 }
+
+
+
+
 

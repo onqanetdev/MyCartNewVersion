@@ -127,56 +127,8 @@ extension HomeViewController {
         typeProductsCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
+    
     //Defining First Section
-    
-    
-//    func typesOfProductsSection() -> NSCollectionLayoutSection {
-//        let itemSize = NSCollectionLayoutSize(
-//            widthDimension: .estimated(90), // Reasonable starting estimate
-//            heightDimension: .absolute(45)
-//        )
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//       
-//        
-//        let groupSize = NSCollectionLayoutSize(
-//            widthDimension: .estimated(90), // Same as item
-//            heightDimension: .absolute(45)
-//        )
-//        
-//        let group = NSCollectionLayoutGroup.horizontal(
-//            layoutSize: groupSize,
-//            subitems: [item]
-//        )
-//        
-//        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-//        
-//        let section = NSCollectionLayoutSection(group: group)
-//        section.interGroupSpacing = 8 // Space between groups (items)
-//        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 6, trailing: 0)
-//        section.orthogonalScrollingBehavior = .continuous
-//        
-//        // Header view
-//
-//
-//        section.boundarySupplementaryItems = [
-//            .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
-//                                   heightDimension: .estimated(220)),
-//                  elementKind: "Header",
-//                  alignment: .top)
-//        ]
-//        
-//        
-//        
-//        // Background decoration
-//        let backgroundItem = NSCollectionLayoutDecorationItem.background(
-//            elementKind: SectionBackgroundView.elementKind
-//        )
-//        section.decorationItems = [backgroundItem]
-//        
-//        return section
-//    }
-    
-    
     func typesOfProductsSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .estimated(80), // Starting estimate
@@ -195,8 +147,9 @@ extension HomeViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 8
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        //section.interGroupSpacing = 8
+        section.interGroupSpacing = 0
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         section.orthogonalScrollingBehavior = .continuous
 
         // Header view
@@ -231,7 +184,7 @@ extension HomeViewController {
         //Define Section which will Contain Group
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 0, bottom: 10, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0)
         
         section.orthogonalScrollingBehavior = .continuous
         
@@ -280,7 +233,7 @@ extension HomeViewController {
         //Define Section which will Contain Group
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 115, trailing: 0)
         
         section.orthogonalScrollingBehavior = .continuous
         

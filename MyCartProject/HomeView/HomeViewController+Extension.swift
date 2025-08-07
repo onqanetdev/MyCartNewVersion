@@ -39,15 +39,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     TypeOfProdCollectionViewCell else {fatalError("Unable deque cell...")}
             cell.cellData = typesOfProduct[indexPath.row]
             
+            cell.backgroundColor = .clear
+            
             // Apply selection logic
             if indexPath == selectedIndex {
-                cell.cellView.backgroundColor = .black
+                cell.cellView.backgroundColor = .clear
                 cell.titleProduct.textColor = .white
                 cell.imgView.tintColor = .white
+                cell.underlineView.backgroundColor = .black
             } else {
-                cell.cellView.backgroundColor = .white
-                cell.titleProduct.textColor = .black
-                cell.imgView.tintColor = .black
+                cell.cellView.backgroundColor = .clear
+                cell.titleProduct.textColor = .white
+                cell.imgView.tintColor = .white
+                cell.underlineView.backgroundColor = .clear
             }
             
             return cell
@@ -157,10 +161,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     
-    
-    
-    
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Disable bounce only when at the top
         if scrollView.contentOffset.y <= 0 {

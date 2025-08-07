@@ -14,4 +14,4 @@ struct AdBannnerModel {
 }
 
 
-let bannerAd = [AdBannnerModel(adImage: "banner")]
+let bannerAd = [AdBannnerModel(adImage: "MyCart_SubHeaderView")]

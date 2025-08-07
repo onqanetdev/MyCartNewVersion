@@ -27,8 +27,8 @@ class SectionBackgroundView: UICollectionReusableView {
 
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -10),
+            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 

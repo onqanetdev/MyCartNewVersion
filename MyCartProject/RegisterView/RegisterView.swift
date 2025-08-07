@@ -31,7 +31,7 @@ class RegisterView: UIView {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "or"
         lbl.textColor = .descriptionBtnColour
-        lbl.font = UIFont(name: "Montserrat-SemiBold", size: 16)
+        lbl.font = UIFont(name: "Montserrat-SemiBold", size: 20)
         return lbl
     }()
     

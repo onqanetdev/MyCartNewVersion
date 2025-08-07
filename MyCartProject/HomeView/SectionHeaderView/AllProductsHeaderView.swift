@@ -5,6 +5,7 @@
 //  Created by Onqanet on 04/07/25.
 //
 
+
 import UIKit
 
 class AllProductsHeaderView: UICollectionReusableView {
@@ -20,7 +21,6 @@ class AllProductsHeaderView: UICollectionReusableView {
     private let addressLabel = UILabel()
     public let searchBar = UIView()
     private let searchTextField = UITextField()
-    private let searchIconImageView = UIImageView()
     
     private let locationView: UIImageView = {
         let imageView = UIImageView()
@@ -30,11 +30,9 @@ class AllProductsHeaderView: UICollectionReusableView {
         return imageView
     }()
     
-    
+    // MARK: - Closures
     var onCartTapped: (() -> Void)?
-
     var onHamburgerTapped: (() -> Void)?
-    
     var onBellIconTapped: (() -> Void)?
     
     // MARK: - Initialization
@@ -44,23 +42,16 @@ class AllProductsHeaderView: UICollectionReusableView {
         setupConstraints()
     }
     
-
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - Setup Methods
     private func setupView() {
-        
         backgroundColor = .clear
         
         addSubview(containerView)
-        
-        
         containerView.backgroundColor = .clear
-        
         
         containerView.addSubview(hamburgerButton)
         containerView.addSubview(cartButton)
@@ -68,13 +59,12 @@ class AllProductsHeaderView: UICollectionReusableView {
         containerView.addSubview(deliveryLabel)
         containerView.addSubview(addressLabel)
         containerView.addSubview(searchBar)
-        
         containerView.addSubview(locationView)
         
+        // Add the searchTextField to the searchBar container
         searchBar.addSubview(searchTextField)
-        searchBar.addSubview(searchIconImageView)
         
-        // Configure buttons
+        // Configure components
         setupButtons()
         setupLabels()
         setupSearchBar()
@@ -82,7 +72,8 @@ class AllProductsHeaderView: UICollectionReusableView {
     
     private func setupButtons() {
         // Hamburger menu button
-        hamburgerButton.setImage(UIImage(systemName: "line.horizontal.3"), for: .normal)
+        hamburgerButton.setTitle("My Cart", for: .normal)
+        hamburgerButton.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 18)
         hamburgerButton.tintColor = .white
         hamburgerButton.addTarget(self, action: #selector(hamburgerTapped), for: .touchUpInside)
         
@@ -111,34 +102,60 @@ class AllProductsHeaderView: UICollectionReusableView {
     }
     
     private func setupSearchBar() {
-        //searchBar.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         searchBar.backgroundColor = .white
-        
-        //searchBar.backgroundColor = #colorLiteral(red: 0.6111966968, green: 0.4623382688, blue: 0.8610779643, alpha: 1)
-        searchBar.layer.cornerRadius = 15
+        searchBar.layer.cornerRadius = 13
         searchBar.layer.masksToBounds = true
         
-        // Search text field
-       // searchTextField.placeholder = "Let's search your needs"
+        // Search text field configuration
         searchTextField.textColor = .black
-        //searchTextField.font = UIFont.systemFont(ofSize: 16)
         searchTextField.font = UIFont(name: "Montserrat-Medium", size: 16)
         searchTextField.borderStyle = .none
         searchTextField.backgroundColor = .clear
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
         
-        // Placeholder color
+        // Placeholder with proper attributes
+        let placeholderText = "Let's search your needs"
         searchTextField.attributedPlaceholder = NSAttributedString(
-            string: "Let's search your needs",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(1.0)]
+            string: placeholderText,
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.gray,
+                NSAttributedString.Key.font: UIFont(name: "Montserrat-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16)
+            ]
         )
         
-        // Search icon
-        searchIconImageView.image = UIImage(systemName: "magnifyingglass")
-        searchIconImageView.tintColor = UIColor.black.withAlphaComponent(0.7)
-        searchIconImageView.contentMode = .scaleAspectFit
+        // Create left view container with proper frame
+        let leftViewContainer = UIView()
+        leftViewContainer.frame = CGRect(x: 0, y: 0, width: 45, height: 40)
+        
+        // Create search icon
+        let searchIcon = UIImageView(image: UIImage(systemName: "magnifyingglass"))
+        searchIcon.tintColor = UIColor.gray
+        searchIcon.contentMode = .scaleAspectFit
+        searchIcon.frame = CGRect(x: 12, y: 10, width: 20, height: 20)
+        
+        leftViewContainer.addSubview(searchIcon)
+        
+        // Set left and right views
+        searchTextField.leftView = leftViewContainer
+        searchTextField.leftViewMode = .always
+        
+        // Add some right padding
+        let rightViewContainer = UIView()
+        rightViewContainer.frame = CGRect(x: 0, y: 0, width: 15, height: 40)
+        searchTextField.rightView = rightViewContainer
+        searchTextField.rightViewMode = .always
+        
+        // Constraint the text field to fill the search bar
+        NSLayoutConstraint.activate([
+            searchTextField.leadingAnchor.constraint(equalTo: searchBar.leadingAnchor),
+            searchTextField.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor),
+            searchTextField.topAnchor.constraint(equalTo: searchBar.topAnchor),
+            searchTextField.bottomAnchor.constraint(equalTo: searchBar.bottomAnchor)
+        ])
     }
     
     private func setupConstraints() {
+        // Set translatesAutoresizingMaskIntoConstraints to false for views using Auto Layout
         containerView.translatesAutoresizingMaskIntoConstraints = false
         hamburgerButton.translatesAutoresizingMaskIntoConstraints = false
         cartButton.translatesAutoresizingMaskIntoConstraints = false
@@ -146,8 +163,6 @@ class AllProductsHeaderView: UICollectionReusableView {
         deliveryLabel.translatesAutoresizingMaskIntoConstraints = false
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchTextField.translatesAutoresizingMaskIntoConstraints = false
-        searchIconImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
@@ -158,10 +173,10 @@ class AllProductsHeaderView: UICollectionReusableView {
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             // Hamburger button
-            hamburgerButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            hamburgerButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0),
             hamburgerButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 56),
-            hamburgerButton.widthAnchor.constraint(equalToConstant: 24),
-            hamburgerButton.heightAnchor.constraint(equalToConstant: 24),
+            hamburgerButton.widthAnchor.constraint(equalToConstant: 80),
+            hamburgerButton.heightAnchor.constraint(equalToConstant: 30),
             
             // Cart button
             cartButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
@@ -176,12 +191,12 @@ class AllProductsHeaderView: UICollectionReusableView {
             bellButton.heightAnchor.constraint(equalToConstant: 24),
             
             // Delivery label
-            deliveryLabel.leadingAnchor.constraint(equalTo: hamburgerButton.leadingAnchor, constant: 0),
+            deliveryLabel.leadingAnchor.constraint(equalTo: hamburgerButton.leadingAnchor, constant: 8),
             deliveryLabel.topAnchor.constraint(equalTo: hamburgerButton.bottomAnchor, constant: 14),
             deliveryLabel.trailingAnchor.constraint(lessThanOrEqualTo: bellButton.leadingAnchor, constant: -8),
             
-            //Location View
-            locationView.leadingAnchor.constraint(equalTo: hamburgerButton.leadingAnchor, constant: 0),
+            // Location View
+            locationView.leadingAnchor.constraint(equalTo: hamburgerButton.leadingAnchor, constant: 8),
             locationView.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: 5),
             locationView.widthAnchor.constraint(equalToConstant: 20),
             locationView.heightAnchor.constraint(equalToConstant: 20),
@@ -189,30 +204,15 @@ class AllProductsHeaderView: UICollectionReusableView {
             // Address label
             addressLabel.leadingAnchor.constraint(equalTo: locationView.trailingAnchor, constant: 6),
             addressLabel.centerYAnchor.constraint(equalTo: locationView.centerYAnchor, constant: 0),
-            //addressLabel.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: 5),
             addressLabel.trailingAnchor.constraint(lessThanOrEqualTo: containerView.trailingAnchor, constant: -16),
             
             // Search bar
-            searchBar.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0),
-            searchBar.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0),
+            searchBar.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
+            searchBar.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
             searchBar.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 10),
-            searchBar.heightAnchor.constraint(equalToConstant: 50),
-            //searchBar.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
-            
-            // Search text field
-            searchTextField.leadingAnchor.constraint(equalTo: searchBar.leadingAnchor, constant: 20),
-            searchTextField.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor),
-            searchTextField.trailingAnchor.constraint(equalTo: searchIconImageView.leadingAnchor, constant: -12),
-            
-            // Search icon
-            searchIconImageView.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: -20),
-            searchIconImageView.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor),
-            searchIconImageView.widthAnchor.constraint(equalToConstant: 20),
-            searchIconImageView.heightAnchor.constraint(equalToConstant: 20)
+            searchBar.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
-    
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -225,27 +225,33 @@ class AllProductsHeaderView: UICollectionReusableView {
     // MARK: - Action Methods
     @objc private func hamburgerTapped() {
         print("Hamburger menu tapped")
-        // Add your hamburger menu action here
         onHamburgerTapped?()
     }
     
     @objc private func cartTapped() {
         print("Cart tapped")
-        // Add your cart action here
         onCartTapped?()
     }
     
     @objc private func bellTapped() {
         print("Bell notification tapped")
-        // Add your notification action here
         onBellIconTapped?()
     }
     
+    // MARK: - Public Methods
+    func updateDeliveryText(_ text: String) {
+        deliveryLabel.text = text
+    }
     
+    func updateAddressText(_ text: String) {
+        addressLabel.text = text
+    }
+    
+    func getSearchText() -> String {
+        return searchTextField.text ?? ""
+    }
+    
+    func clearSearch() {
+        searchTextField.text = ""
+    }
 }
-
-
-
-
-
-

@@ -10,7 +10,7 @@ import UIKit
 class CustomSideMenuView:  UIView, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
-    private let tableView = UITableView()
+    public let tableView = UITableView()
     private let menuItems = ["Chips & Wafers", "Bhujia & Mixtures", "Namkeen Snacks", "Nachos", "Healthy Snacks", "Popcorn", "Papad & Fryums", "Premium"]
     
     
@@ -30,7 +30,7 @@ class CustomSideMenuView:  UIView, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Setup
     private func setupView() {
-        backgroundColor = .yellow // Set background color for the side menu itself
+        backgroundColor = .white // Set background color for the side menu itself
         layer.cornerRadius = 10 // Rounded corners for the side menu
         layer.shadowColor = UIColor.purple.cgColor
         layer.shadowOpacity = 0.2
@@ -40,6 +40,7 @@ class CustomSideMenuView:  UIView, UITableViewDataSource, UITableViewDelegate {
         // Configure the table view
         tableView.dataSource = self
         tableView.delegate = self
+        
        // tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuItemCell")
         tableView.register(CategorySideMenuCell.self, forCellReuseIdentifier: CategorySideMenuCell.cellIdentifier)
         tableView.separatorStyle = .none // No separators between cells

@@ -44,7 +44,8 @@ class RegisterViewController: UIViewController {
     
     private func navigateToTrendingProducts() {
         // Implement your navigation logic here
-        self.navigationController?.pushViewController(HomeViewController(), animated: true)
+       // self.navigationController?.pushViewController(HomeViewController(), animated: true)
+        self.navigationController?.pushViewController(MainTabBarController(), animated: true)
     }
     
     private func navigateToOTPVerificationPage() {

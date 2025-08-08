@@ -23,6 +23,7 @@ class CategoriesViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationController?.isNavigationBarHidden = true
         
+    
         if #available(iOS 18.0, *) {
             tabBarController?.isTabBarHidden = true
             tabBarController?.tabBar.isHidden = true
@@ -39,12 +40,12 @@ class CategoriesViewController: UIViewController {
 
         // Set up constraints for the side menu to be fixed on the left
         let screenWidth = view.bounds.width
-        let sideMenuWidth = screenWidth * 0.40 // Takes 40% of the screen width
+        let sideMenuWidth = screenWidth * 0.20 // Takes 40% of the screen width
 
         NSLayoutConstraint.activate([
             sideMenuView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0), // Fixed to the left edge
             sideMenuView.topAnchor.constraint(equalTo: view.topAnchor),
-            sideMenuView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            sideMenuView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             sideMenuView.widthAnchor.constraint(equalToConstant: sideMenuWidth)
         ])
     }
@@ -60,7 +61,7 @@ class CategoriesViewController: UIViewController {
 
         // Constraints for the main content view, positioned to the right of the side menu
         NSLayoutConstraint.activate([
-            mainContentView.leadingAnchor.constraint(equalTo: sideMenuView.trailingAnchor, constant: 10), // 10pt spacing from side menu
+            mainContentView.leadingAnchor.constraint(equalTo: sideMenuView.trailingAnchor, constant: 0), // 10pt spacing from side menu
             mainContentView.topAnchor.constraint(equalTo: view.topAnchor),
             mainContentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             mainContentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10) // 10pt spacing from right edge

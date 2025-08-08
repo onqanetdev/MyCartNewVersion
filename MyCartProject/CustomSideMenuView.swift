@@ -12,10 +12,15 @@ class CustomSideMenuView:  UIView, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Properties
     private let tableView = UITableView()
     private let menuItems = ["Chips & Wafers", "Bhujia & Mixtures", "Namkeen Snacks", "Nachos", "Healthy Snacks", "Popcorn", "Papad & Fryums", "Premium"]
+    
+    
+    var selectedIndex: IndexPath = IndexPath(item: 0, section: 0)
 
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+    
         setupView()
     }
 
@@ -35,7 +40,8 @@ class CustomSideMenuView:  UIView, UITableViewDataSource, UITableViewDelegate {
         // Configure the table view
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuItemCell")
+       // tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuItemCell")
+        tableView.register(CategorySideMenuCell.self, forCellReuseIdentifier: CategorySideMenuCell.cellIdentifier)
         tableView.separatorStyle = .none // No separators between cells
         tableView.backgroundColor = .clear // Make table view background clear to show parent view's background
         tableView.showsVerticalScrollIndicator = false
@@ -47,9 +53,9 @@ class CustomSideMenuView:  UIView, UITableViewDataSource, UITableViewDelegate {
         // Set up constraints for the table view to fill the CustomSideMenuView
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: topAnchor, constant: 0), // Padding from top
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10), // Padding from left
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10), // Padding from right
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20) // Padding from bottom
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0), // Padding from left
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0), // Padding from right
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0) // Padding from bottom
         ])
     }
 
@@ -59,25 +65,52 @@ class CustomSideMenuView:  UIView, UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath)
-        cell.textLabel?.text = menuItems[indexPath.row]
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        cell.textLabel?.textColor = .darkGray
-        cell.selectionStyle = .none // No selection highlight
-        cell.backgroundColor = .clear // Make cell background clear
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CategorySideMenuCell.cellIdentifier, for: indexPath) as? CategorySideMenuCell else {fatalError("Unable deque cell...")}
+        
+        cell.menuLabel.text = menuItems[indexPath.row]
+        cell.menuImageView.image = UIImage(named: "Crax") // Replace with actual asset names
+        
+        
+        if indexPath == selectedIndex {
+            cell.verticalSelection.backgroundColor = .detailView
+        } else {
+            cell.verticalSelection.backgroundColor = .white
+        }
+        
+        
         return cell
+        
     }
 
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected: \(menuItems[indexPath.row])")
+        //print("Selected: \(menuItems[indexPath.row])")
         // You can add logic here to handle menu item selection, e.g., notify a delegate
+        
+        let previousIndex = selectedIndex
+            selectedIndex = indexPath
+
+            var indexesToReload = [indexPath]
+            if previousIndex != indexPath {
+                indexesToReload.append(previousIndex)
+            }
+
+        //tableView.reloadR(at: indexesToReload)
+        tableView.reloadRows(at: indexesToReload, with: .none)
+        
+        
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50 // Height for each row
+        return 100 // Height for each row
     }
 }
+
+
+
+
+
 
 
 

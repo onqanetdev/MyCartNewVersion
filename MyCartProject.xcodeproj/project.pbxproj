@@ -100,6 +100,7 @@
 		8AC36FB02E40B83000488152 /* OTPVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC36FAF2E40B83000488152 /* OTPVerificationView.swift */; };
 		8AC36FB22E40C0DE00488152 /* OTPVeriVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC36FB12E40C0DE00488152 /* OTPVeriVC.swift */; };
 		8AC556EF2E3C775F00201515 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC556EE2E3C775F00201515 /* OrderDetailsViewController.swift */; };
+		8AC5D0442E45B71800D1BE68 /* CategorySideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5D0432E45B71800D1BE68 /* CategorySideMenuCell.swift */; };
 		8AD227AD2E1E24B1001C6504 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227AC2E1E24B1001C6504 /* UILabel+Extension.swift */; };
 		8AD227AF2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227AE2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift */; };
 		8AD227B22E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD227B12E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift */; };
@@ -209,6 +210,7 @@
 		8AC36FAF2E40B83000488152 /* OTPVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationView.swift; sourceTree = "<group>"; };
 		8AC36FB12E40C0DE00488152 /* OTPVeriVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVeriVC.swift; sourceTree = "<group>"; };
 		8AC556EE2E3C775F00201515 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		8AC5D0432E45B71800D1BE68 /* CategorySideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySideMenuCell.swift; sourceTree = "<group>"; };
 		8AD227AC2E1E24B1001C6504 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8AD227AE2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductDetailViewController+Extension.swift"; sourceTree = "<group>"; };
 		8AD227B12E1E4C2A001C6504 /* ProductBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				8AAB199E2E446D1D009482A3 /* MainTabBarController.swift */,
 				8AAB19A02E44CB4C009482A3 /* CustomSideMenuView.swift */,
 				8AAB19A22E44CBAF009482A3 /* CategoriesViewController.swift */,
+				8AC5D0432E45B71800D1BE68 /* CategorySideMenuCell.swift */,
 			);
 			path = MyCartProject;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				8AA41F582E1FCD93002E127C /* PageControlFooterView.swift in Sources */,
 				8AB10A102E1789B8001ED82C /* FoodTopBannerModel.swift in Sources */,
 				8AC556EF2E3C775F00201515 /* OrderDetailsViewController.swift in Sources */,
+				8AC5D0442E45B71800D1BE68 /* CategorySideMenuCell.swift in Sources */,
 				8AB10A3C2E17E7C6001ED82C /* RegisterViewController+Extension.swift in Sources */,
 				8AC08C092E39DC4F002AFD58 /* NotificationTableViewCell.swift in Sources */,
 				8AC36FB22E40C0DE00488152 /* OTPVeriVC.swift in Sources */,

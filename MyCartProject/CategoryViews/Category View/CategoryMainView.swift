@@ -52,7 +52,34 @@ class CategoryMainView: UIView {
         ])
         
     }
+    
+    
+    
+//    func configureCompositionalLayout(){
+//        let layout = UICollectionViewCompositionalLayout { sectionIndex, environment in
+//            switch sectionIndex {
+//            case 0:
+//                return self.typesOfProductsSection()
+//            case 1:
+//                return self.bannerShowingSection()
+//            
+//            default:
+//                return nil
+//            }
+//            
+//        }
+//        
+//        
+//        layout.register(SectionBackgroundView.self, forDecorationViewOfKind: SectionBackgroundView.elementKind)
+//    
+//        categoryMainViewCollectionView.setCollectionViewLayout(layout, animated: true)
+//    }
+//    
 
+    
+    //All Compositionla
+    
+    
 }
 
 
@@ -111,7 +138,7 @@ extension CategoryMainView: UICollectionViewDelegate, UICollectionViewDataSource
         let widthPerItem = availableWidth / itemsPerRow
         
         // Example: Fixed height or proportional
-        return CGSize(width: widthPerItem, height: widthPerItem * 1.66)
+        return CGSize(width: widthPerItem, height: widthPerItem * 1.96)
     }
 
     

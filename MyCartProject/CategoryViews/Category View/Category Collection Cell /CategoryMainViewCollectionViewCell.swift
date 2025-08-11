@@ -32,7 +32,8 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.red.cgColor
         btn.layer.cornerRadius = 5
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
+       // btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         return btn
     }()
     
@@ -40,7 +41,8 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
     let quantityLabel: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        //lbl.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        lbl.font = UIFont(name: "Montserrat-Medium", size: 12)
         lbl.textColor = .darkGray
         return lbl
     }()
@@ -60,11 +62,12 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
     let productNameLabel: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        lbl.numberOfLines = 2
+        lbl.font = UIFont(name: "Montserrat-Medium", size: 13)  // Custom font family
+        lbl.numberOfLines = 0
         lbl.textColor = .black
         return lbl
     }()
+
     
     // Star rating stack view
     let starStackView: UIStackView = {
@@ -80,8 +83,8 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
     let saleOffLabel: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        lbl.textColor = .systemGreen
+        lbl.font = UIFont(name: "Montserrat-Bold", size: 12)
+        lbl.textColor = #colorLiteral(red: 0.1904025674, green: 0.5245855451, blue: 0.9384527802, alpha: 1)
         return lbl
     }()
     
@@ -97,11 +100,6 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        contentView.backgroundColor = .white
-        contentView.layer.cornerRadius = 8
-        contentView.layer.borderWidth = 0.5
-        contentView.layer.borderColor = UIColor.lightGray.cgColor
         
         setupViews()
         setupConstraints()
@@ -127,7 +125,7 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(starStackView)
         
         let bottomStack = UIStackView(arrangedSubviews: [saleOffLabel, priceLabel])
-        bottomStack.axis = .horizontal
+        bottomStack.axis = .vertical
         bottomStack.spacing = 6
         bottomStack.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(bottomStack)
@@ -142,11 +140,12 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
             productImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             productImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             productImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8),
-            productImageView.heightAnchor.constraint(equalToConstant: 100),
+            productImageView.heightAnchor.constraint(equalToConstant: 120),
             
             // ADD button
-            addButton.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 6),
-            addButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            addButton.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: -26),
+            addButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            //addButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             addButton.widthAnchor.constraint(equalToConstant: 50),
             addButton.heightAnchor.constraint(equalToConstant: 25),
             
@@ -167,9 +166,9 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
             starStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
             
             // Sale off + price
-            contentView.viewWithTag(101)!.topAnchor.constraint(equalTo: starStackView.bottomAnchor, constant: 6),
+            contentView.viewWithTag(101)!.topAnchor.constraint(equalTo: starStackView.bottomAnchor, constant: 2),
             contentView.viewWithTag(101)!.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
-            contentView.viewWithTag(101)!.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6)
+            contentView.viewWithTag(101)!.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
         ])
     }
     
@@ -194,7 +193,15 @@ class CategoryMainViewCollectionViewCell: UICollectionViewCell {
         
 //        vegIconView.image = UIImage(named: model.vegIconName)
         productNameLabel.text = model.productName
-        saleOffLabel.text = model.percentOff
-        priceLabel.text = model.productPrice
+        saleOffLabel.text = model.percentOff + " OFF"
+        priceLabel.text = "₹" + model.productPrice
     }
 }
+
+
+
+
+
+
+
+

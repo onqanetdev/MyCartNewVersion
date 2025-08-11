@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A0AE5922E379D7D00F13CD5 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AE5902E379D7D00F13CD5 /* ForgetPasswordViewController.swift */; };
 		8A0AE5932E379D7D00F13CD5 /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0AE5912E379D7D00F13CD5 /* ForgetPasswordViewController.xib */; };
+		8A89964B2E49CD9900558247 /* FilterSortHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89964A2E49CD9900558247 /* FilterSortHeaderView.swift */; };
 		8A8FBEBE2E335EF100425C88 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */; };
 		8A8FBEC02E33674D00425C88 /* CustomSignUpImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */; };
 		8A8FBEC22E33944200425C88 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEC12E33944200425C88 /* CustomButton.swift */; };
@@ -120,6 +121,7 @@
 /* Begin PBXFileReference section */
 		8A0AE5902E379D7D00F13CD5 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		8A0AE5912E379D7D00F13CD5 /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
+		8A89964A2E49CD9900558247 /* FilterSortHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSortHeaderView.swift; sourceTree = "<group>"; };
 		8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignUpImgView.swift; sourceTree = "<group>"; };
 		8A8FBEC12E33944200425C88 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -248,6 +250,14 @@
 				8A0AE5912E379D7D00F13CD5 /* ForgetPasswordViewController.xib */,
 			);
 			path = "Forget Password Views";
+			sourceTree = "<group>";
+		};
+		8A8996492E49CD6400558247 /* Category Header View */ = {
+			isa = PBXGroup;
+			children = (
+				8A89964A2E49CD9900558247 /* FilterSortHeaderView.swift */,
+			);
+			path = "Category Header View";
 			sourceTree = "<group>";
 		};
 		8A8FBEB82E33597D00425C88 /* Reusables */ = {
@@ -601,6 +611,7 @@
 		8AC5D04D2E45F27500D1BE68 /* Category View */ = {
 			isa = PBXGroup;
 			children = (
+				8A8996492E49CD6400558247 /* Category Header View */,
 				8AC5D0532E46049E00D1BE68 /* Category Collection Cell  */,
 				8AC5D04E2E45F35000D1BE68 /* CategoryMainView.swift */,
 			);
@@ -790,6 +801,7 @@
 				8AB109F82E17854E001ED82C /* SceneDelegate.swift in Sources */,
 				8AC08C062E39D7FF002AFD58 /* NotificationViewController.swift in Sources */,
 				8AD227B92E1E7CA3001C6504 /* StarRatingViewController.swift in Sources */,
+				8A89964B2E49CD9900558247 /* FilterSortHeaderView.swift in Sources */,
 				8AAFA6992E1CE62200289F78 /* TrendingProductsCell.swift in Sources */,
 				8AB10A222E178DCE001ED82C /* TrendingProductsHeaderView.swift in Sources */,
 				8AA41F5A2E1FD328002E127C /* ProductReviewsCollectionViewCell.swift in Sources */,

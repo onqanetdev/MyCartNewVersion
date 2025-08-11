@@ -19,6 +19,10 @@ class CategoryMainView: UIView {
        
         cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
+        cv.register(FilterSortHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: FilterSortHeaderView.headerIdentifier)
+        cv.register(UICollectionReusableView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: "EmptyHeader")
+        
+        
         cv.contentInsetAdjustmentBehavior = .never
         cv.backgroundColor = .clear
         return cv
@@ -32,6 +36,7 @@ class CategoryMainView: UIView {
         
     
         setUpView()
+        configureCompositionalLayout()
     }
 
     required init?(coder: NSCoder) {
@@ -55,30 +60,84 @@ class CategoryMainView: UIView {
     
     
     
-//    func configureCompositionalLayout(){
-//        let layout = UICollectionViewCompositionalLayout { sectionIndex, environment in
-//            switch sectionIndex {
-//            case 0:
-//                return self.typesOfProductsSection()
-//            case 1:
-//                return self.bannerShowingSection()
-//            
-//            default:
-//                return nil
-//            }
-//            
-//        }
-//        
-//        
+    func configureCompositionalLayout(){
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, environment in
+            switch sectionIndex {
+            case 0:
+                return self.typesOfProductsSection()
+        
+            default:
+                return nil
+            }
+            
+        }
+        
+        
 //        layout.register(SectionBackgroundView.self, forDecorationViewOfKind: SectionBackgroundView.elementKind)
-//    
-//        categoryMainViewCollectionView.setCollectionViewLayout(layout, animated: true)
-//    }
-//    
+    
+        categoryMainViewCollectionView.setCollectionViewLayout(layout, animated: true)
+    }
+    
 
     
     //All Compositionla
     
+    //Defining First Section
+   
+    func typesOfProductsSection() -> NSCollectionLayoutSection {
+        // Padding between items
+        let padding: CGFloat = 10
+        let itemsPerRow: CGFloat = 2
+        
+        // Calculate width per item
+        let availableWidth = categoryMainViewCollectionView.bounds.width - (padding * (itemsPerRow + 1))
+        let widthPerItem = availableWidth / itemsPerRow
+        let heightPerItem = widthPerItem * 1.96 // Adjust height ratio as needed
+        
+        // Item
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(widthPerItem),
+            heightDimension: .absolute(heightPerItem)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        // Set spacing between items inside the group
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: padding, bottom: 0, trailing: 0)
+        
+        // Group (horizontal: 2 items per row)
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(heightPerItem)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item, item] // Two items in a row
+        )
+        
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = padding
+        section.contentInsets = NSDirectionalEdgeInsets(top: padding, leading: padding, bottom: padding, trailing: padding)
+        
+    
+        
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: .init(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .estimated(50) // fixed height for header
+            ),
+            elementKind: "Header",
+            alignment: .top
+        )
+        header.pinToVisibleBounds = true // 👈 Makes it sticky
+
+        section.boundarySupplementaryItems = [header]
+        
+        
+        
+        return section
+    }
+
     
 }
 
@@ -125,21 +184,46 @@ extension CategoryMainView: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     
-    
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        // Example: 2 items per row with spacing
-        let padding: CGFloat = 10
-        let itemsPerRow: CGFloat = 2
-        let availableWidth = collectionView.bounds.width - (padding * (itemsPerRow + 1))
-        let widthPerItem = availableWidth / itemsPerRow
-        
-        // Example: Fixed height or proportional
-        return CGSize(width: widthPerItem, height: widthPerItem * 1.96)
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == "Header" {
+            switch indexPath.section {
+            case 0:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FilterSortHeaderView.headerIdentifier, for: indexPath) as! FilterSortHeaderView
+                //header.delegate = self
+                header.backgroundColor = .white
+               
+                
+                return header
+                
+          
+                
+            default:
+                let emptyHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "EmptyHeader", for: indexPath)
+                return emptyHeader
+            }
+        } else {
+            let emptyHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "EmptyHeader", for: indexPath)
+            return emptyHeader
+        }
     }
+    
+    
+    
+    
+    
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        // Example: 2 items per row with spacing
+//        let padding: CGFloat = 10
+//        let itemsPerRow: CGFloat = 2
+//        let availableWidth = collectionView.bounds.width - (padding * (itemsPerRow + 1))
+//        let widthPerItem = availableWidth / itemsPerRow
+//        
+//        // Example: Fixed height or proportional
+//        return CGSize(width: widthPerItem, height: widthPerItem * 1.96)
+//    }
 
     
 }

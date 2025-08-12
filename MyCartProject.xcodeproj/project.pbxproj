@@ -10,6 +10,16 @@
 		8A0AE5922E379D7D00F13CD5 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AE5902E379D7D00F13CD5 /* ForgetPasswordViewController.swift */; };
 		8A0AE5932E379D7D00F13CD5 /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0AE5912E379D7D00F13CD5 /* ForgetPasswordViewController.xib */; };
 		8A89964B2E49CD9900558247 /* FilterSortHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89964A2E49CD9900558247 /* FilterSortHeaderView.swift */; };
+		8A89964E2E49D24100558247 /* CategoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89964D2E49D24100558247 /* CategoryProductViewController.swift */; };
+		8A8996522E49D2B900558247 /* CategoryProductViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8996512E49D29D00558247 /* CategoryProductViewController+Extension.swift */; };
+		8A89965A2E49E39800558247 /* SnacksAndDrinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8996592E49E38600558247 /* SnacksAndDrinksModel.swift */; };
+		8A89965C2E49E56F00558247 /* BeautyAndPersonalCareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89965B2E49E55C00558247 /* BeautyAndPersonalCareModel.swift */; };
+		8A89965E2E49E67A00558247 /* HouseholdEssentialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89965D2E49E66A00558247 /* HouseholdEssentialModel.swift */; };
+		8A8996602E49E71D00558247 /* ShopByStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89965F2E49E71200558247 /* ShopByStoreModel.swift */; };
+		8A8996632E49ED4300558247 /* SnackesAndDrinksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8996622E49ED4300558247 /* SnackesAndDrinksCell.swift */; };
+		8A8996652E49ED6D00558247 /* BeautyAndPersonalCareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8996642E49ED6D00558247 /* BeautyAndPersonalCareCell.swift */; };
+		8A8996672E49EDEB00558247 /* HouseHoldEssentialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8996662E49EDEB00558247 /* HouseHoldEssentialCell.swift */; };
+		8A8996692E49EE0B00558247 /* ShopByStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8996682E49EE0B00558247 /* ShopByStoreCell.swift */; };
 		8A8FBEBE2E335EF100425C88 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */; };
 		8A8FBEC02E33674D00425C88 /* CustomSignUpImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */; };
 		8A8FBEC22E33944200425C88 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBEC12E33944200425C88 /* CustomButton.swift */; };
@@ -122,6 +132,16 @@
 		8A0AE5902E379D7D00F13CD5 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		8A0AE5912E379D7D00F13CD5 /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		8A89964A2E49CD9900558247 /* FilterSortHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSortHeaderView.swift; sourceTree = "<group>"; };
+		8A89964D2E49D24100558247 /* CategoryProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductViewController.swift; sourceTree = "<group>"; };
+		8A8996512E49D29D00558247 /* CategoryProductViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryProductViewController+Extension.swift"; sourceTree = "<group>"; };
+		8A8996592E49E38600558247 /* SnacksAndDrinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksAndDrinksModel.swift; sourceTree = "<group>"; };
+		8A89965B2E49E55C00558247 /* BeautyAndPersonalCareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyAndPersonalCareModel.swift; sourceTree = "<group>"; };
+		8A89965D2E49E66A00558247 /* HouseholdEssentialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseholdEssentialModel.swift; sourceTree = "<group>"; };
+		8A89965F2E49E71200558247 /* ShopByStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopByStoreModel.swift; sourceTree = "<group>"; };
+		8A8996622E49ED4300558247 /* SnackesAndDrinksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackesAndDrinksCell.swift; sourceTree = "<group>"; };
+		8A8996642E49ED6D00558247 /* BeautyAndPersonalCareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyAndPersonalCareCell.swift; sourceTree = "<group>"; };
+		8A8996662E49EDEB00558247 /* HouseHoldEssentialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseHoldEssentialCell.swift; sourceTree = "<group>"; };
+		8A8996682E49EE0B00558247 /* ShopByStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopByStoreCell.swift; sourceTree = "<group>"; };
 		8A8FBEBD2E335EF100425C88 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8A8FBEBF2E33674D00425C88 /* CustomSignUpImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignUpImgView.swift; sourceTree = "<group>"; };
 		8A8FBEC12E33944200425C88 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -260,6 +280,28 @@
 			path = "Category Header View";
 			sourceTree = "<group>";
 		};
+		8A89964C2E49D19C00558247 /* Tabbars Views */ = {
+			isa = PBXGroup;
+			children = (
+				8AAB199E2E446D1D009482A3 /* MainTabBarController.swift */,
+				8AC5D0492E45CD7900D1BE68 /* CategoryViews */,
+				8A89964D2E49D24100558247 /* CategoryProductViewController.swift */,
+				8A8996512E49D29D00558247 /* CategoryProductViewController+Extension.swift */,
+			);
+			path = "Tabbars Views";
+			sourceTree = "<group>";
+		};
+		8A8996612E49ECDA00558247 /* Categories Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A8996622E49ED4300558247 /* SnackesAndDrinksCell.swift */,
+				8A8996642E49ED6D00558247 /* BeautyAndPersonalCareCell.swift */,
+				8A8996662E49EDEB00558247 /* HouseHoldEssentialCell.swift */,
+				8A8996682E49EE0B00558247 /* ShopByStoreCell.swift */,
+			);
+			path = "Categories Cell";
+			sourceTree = "<group>";
+		};
 		8A8FBEB82E33597D00425C88 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,8 +430,7 @@
 				8AB10A002E178550001ED82C /* LaunchScreen.storyboard */,
 				8AB10A032E178550001ED82C /* Info.plist */,
 				8AD227B82E1E7CA3001C6504 /* StarRatingViewController.swift */,
-				8AAB199E2E446D1D009482A3 /* MainTabBarController.swift */,
-				8AC5D0492E45CD7900D1BE68 /* CategoryViews */,
+				8A89964C2E49D19C00558247 /* Tabbars Views */,
 			);
 			path = MyCartProject;
 			sourceTree = "<group>";
@@ -417,6 +458,10 @@
 				8AB10A112E1789FE001ED82C /* TypesOfProduct.swift */,
 				8AB10A132E178A25001ED82C /* AdBannerModel.swift */,
 				8AB10A152E178A4E001ED82C /* GroceryModel.swift */,
+				8A8996592E49E38600558247 /* SnacksAndDrinksModel.swift */,
+				8A89965B2E49E55C00558247 /* BeautyAndPersonalCareModel.swift */,
+				8A89965D2E49E66A00558247 /* HouseholdEssentialModel.swift */,
+				8A89965F2E49E71200558247 /* ShopByStoreModel.swift */,
 				8AB10A172E178AAF001ED82C /* TrendingProductModel.swift */,
 				8AAFA69A2E1D007100289F78 /* AllTrendingProducts.swift */,
 				8AA622E42E21122D00693239 /* RestaurantListModel.swift */,
@@ -600,6 +645,7 @@
 		8AC5D0492E45CD7900D1BE68 /* CategoryViews */ = {
 			isa = PBXGroup;
 			children = (
+				8A8996612E49ECDA00558247 /* Categories Cell */,
 				8AC5D04D2E45F27500D1BE68 /* Category View */,
 				8AC5D0462E45CD7900D1BE68 /* CategoriesViewController.swift */,
 				8AC5D0472E45CD7900D1BE68 /* CategorySideMenuCell.swift */,
@@ -760,6 +806,7 @@
 				8AAFA69E2E1D442300289F78 /* ProductDetailViewController.swift in Sources */,
 				8AC08C142E39FD4A002AFD58 /* OrderHistoryViewController.swift in Sources */,
 				8ABC6A892E1BD5AD00BF8DC2 /* TrendingProductsViewController+Extension.swift in Sources */,
+				8A89965E2E49E67A00558247 /* HouseholdEssentialModel.swift in Sources */,
 				8AB10A332E17973C001ED82C /* LoginViewController.swift in Sources */,
 				8AC5D04F2E45F35000D1BE68 /* CategoryMainView.swift in Sources */,
 				8A8FBEC22E33944200425C88 /* CustomButton.swift in Sources */,
@@ -776,9 +823,12 @@
 				8A91295D2E24CAAA00328664 /* BasketTotalCollectionViewCell.swift in Sources */,
 				8AB10A202E178D9A001ED82C /* GroceryKitchenHeaderView.swift in Sources */,
 				8AB109FA2E17854E001ED82C /* ViewController.swift in Sources */,
+				8A89964E2E49D24100558247 /* CategoryProductViewController.swift in Sources */,
 				8ABCAAEA2E28DCD900049B01 /* ProfileModel.swift in Sources */,
 				8AE0FE542E2F624F00FF24A4 /* UIColor+Extension.swift in Sources */,
+				8A89965A2E49E39800558247 /* SnacksAndDrinksModel.swift in Sources */,
 				8AAB199F2E446D1D009482A3 /* MainTabBarController.swift in Sources */,
+				8A8996602E49E71D00558247 /* ShopByStoreModel.swift in Sources */,
 				8AA622E52E21122D00693239 /* RestaurantListModel.swift in Sources */,
 				8AD3B6E92E38EC8B003D5493 /* PrivacyViewController.swift in Sources */,
 				8A8FBEC52E339BCA00425C88 /* AddressDetailsView.swift in Sources */,
@@ -787,6 +837,7 @@
 				8AC08C122E39F36A002AFD58 /* OrderHistoryTableViewCell.swift in Sources */,
 				8AD3B6E42E38EB0E003D5493 /* ReUsableSampleView.swift in Sources */,
 				8AA41F552E1F876D002E127C /* ProductSegmentCollectionViewCell.swift in Sources */,
+				8A89965C2E49E56F00558247 /* BeautyAndPersonalCareModel.swift in Sources */,
 				8A0AE5922E379D7D00F13CD5 /* ForgetPasswordViewController.swift in Sources */,
 				8AB10A182E178AAF001ED82C /* TrendingProductModel.swift in Sources */,
 				8AD3B6EB2E38F4E2003D5493 /* TermsCondiViewController.swift in Sources */,
@@ -814,6 +865,7 @@
 				8AD227AD2E1E24B1001C6504 /* UILabel+Extension.swift in Sources */,
 				8AB10A242E178DE7001ED82C /* AllProductsHeaderView.swift in Sources */,
 				8AA622E02E210E1D00693239 /* BasketGroupViewController+Extension.swift in Sources */,
+				8A8996692E49EE0B00558247 /* ShopByStoreCell.swift in Sources */,
 				8AA622E32E210F7700693239 /* BasketGroupCollectionViewCell.swift in Sources */,
 				8AB10A352E17AC83001ED82C /* UITextField+Extension.swift in Sources */,
 				8AA41F582E1FCD93002E127C /* PageControlFooterView.swift in Sources */,
@@ -821,11 +873,14 @@
 				8AC556EF2E3C775F00201515 /* OrderDetailsViewController.swift in Sources */,
 				8AB10A3C2E17E7C6001ED82C /* RegisterViewController+Extension.swift in Sources */,
 				8AC08C092E39DC4F002AFD58 /* NotificationTableViewCell.swift in Sources */,
+				8A8996672E49EDEB00558247 /* HouseHoldEssentialCell.swift in Sources */,
 				8AC36FB22E40C0DE00488152 /* OTPVeriVC.swift in Sources */,
+				8A8996632E49ED4300558247 /* SnackesAndDrinksCell.swift in Sources */,
 				8AB10A292E178F61001ED82C /* BannerCollectionViewCell.swift in Sources */,
 				8AD227B52E1E766A001C6504 /* ProductDetailModel.swift in Sources */,
 				8A9D04462E4358FA00FBBDA1 /* BannerView.swift in Sources */,
 				8AD227B72E1E7963001C6504 /* ProductDetailsCollectionViewCell.swift in Sources */,
+				8A8996522E49D2B900558247 /* CategoryProductViewController+Extension.swift in Sources */,
 				8AC5D04A2E45CD7900D1BE68 /* CategoriesViewController.swift in Sources */,
 				8AC5D04B2E45CD7900D1BE68 /* CategorySideMenuCell.swift in Sources */,
 				8AC5D04C2E45CD7900D1BE68 /* CustomSideMenuView.swift in Sources */,
@@ -834,6 +889,7 @@
 				8AD227AF2E1E3D5C001C6504 /* ProductDetailViewController+Extension.swift in Sources */,
 				8AC36FB02E40B83000488152 /* OTPVerificationView.swift in Sources */,
 				8AB10A302E179198001ED82C /* SectionBackgroundView.swift in Sources */,
+				8A8996652E49ED6D00558247 /* BeautyAndPersonalCareCell.swift in Sources */,
 				8A9C6CBD2E277BA8001F5B01 /* MyAccountViewController.swift in Sources */,
 				8ABCAAED2E28F4A000049B01 /* TestTestTestViewController.swift in Sources */,
 				8ABCAAE62E28AE4400049B01 /* MyAccountTblVC.swift in Sources */,

@@ -18,12 +18,16 @@ struct GroceryModel{
 
 
 
-let grocery = [GroceryModel(img: "brocoli", nameGrocery: "Vegetables & Fruits"),
-               GroceryModel(img: "brocoli", nameGrocery: "Dairy & Breakfast"),
-               GroceryModel(img: "brocoli", nameGrocery: "Cold Drinks & Juices"),
-               GroceryModel(img: "brocoli", nameGrocery: "Instant & Frozen Food"),
-               GroceryModel(img: "brocoli", nameGrocery: "Vegetables & Fruits"),
-               GroceryModel(img: "brocoli", nameGrocery: "Vegetables & Fruits"),
-               GroceryModel(img: "brocoli", nameGrocery: "Vegetables & Fruits"),
-               GroceryModel(img: "brocoli", nameGrocery: "Vegetables & Fruits")
+let grocery = [
+    GroceryModel(img: "Vegetables", nameGrocery: "Vegetables & Fruits"),
+    GroceryModel(img: "Atta_Img", nameGrocery: "Atta,Rice & Dal"),
+    GroceryModel(img: "masalas_imgs", nameGrocery: "Oil,Ghee & Masala"),
+    GroceryModel(img: "Dairy_Products", nameGrocery: "Dairy,Bread & Eggs"),
+    GroceryModel(img: "biscuits_imgs", nameGrocery: "Bakery & Biscuits"),
+    GroceryModel(img: "dryFruits_Imgs", nameGrocery: "Dry Fruits & Cereals"),
+    GroceryModel(img: "meat_Img", nameGrocery: "Chicken,Meat & Fish"),
+    GroceryModel(img: "kitchenWare_imgs", nameGrocery: "Kitchenware & Appliances")
 ]
+
+
+

@@ -143,9 +143,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            
-
-    
+                
             let previousIndex = selectedIndex
                 selectedIndex = indexPath
 
@@ -176,7 +174,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
     }
-
-
-    
 }
+
+
+
+

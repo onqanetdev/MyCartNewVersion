@@ -12,7 +12,7 @@ class GroceryKitchenHeaderView: UICollectionReusableView {
     
     static let headerIdentifier = "GroceryKitchenHeaderView"
     
-    private let headerTitle:UILabel = {
+    public let headerTitle:UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Grocery & Kitchen"
@@ -23,7 +23,7 @@ class GroceryKitchenHeaderView: UICollectionReusableView {
     }()
     
     
-    private let viewAll:UIButton = {
+    public let viewAll:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("View All", for: .normal)

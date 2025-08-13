@@ -23,7 +23,8 @@ class CategorySideMenuCellWithoutImage: UITableViewCell {
     let menuLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        //label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = UIFont(name: "Montserrat-Medium", size: 16)
         label.textColor = .black
         return label
     }()

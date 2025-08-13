@@ -37,7 +37,7 @@ class CustomSideFilterView: UIView, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Setup
     private func setupView() {
-        backgroundColor = .green
+        backgroundColor = .white
         layer.cornerRadius = 10
 
 

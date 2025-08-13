@@ -18,12 +18,12 @@ struct SnacksAndDrinksModel {
 
 
 let snacks = [
-    SnacksAndDrinksModel(img: "brocoli", nameSnacks: "Vegetables & Fruits"),
-    SnacksAndDrinksModel(img: "brocoli", nameSnacks: "Dairy & Breakfast"),
-    SnacksAndDrinksModel(img: "brocoli", nameSnacks: "Cold Drinks & Juices"),
-    SnacksAndDrinksModel(img: "brocoli", nameSnacks: "Instant & Frozen Food"),
-    SnacksAndDrinksModel(img: "brocoli", nameSnacks: "Vegetables & Fruits"),
-    SnacksAndDrinksModel(img: "brocoli", nameSnacks: "Vegetables & Fruits"),
-    SnacksAndDrinksModel(img: "brocoli", nameSnacks: "Vegetables & Fruits"),
-    SnacksAndDrinksModel(img: "brocoli", nameSnacks: "Vegetables & Fruits")
+    SnacksAndDrinksModel(img: "Cheetos", nameSnacks: "Chips & Namkeen"),
+    SnacksAndDrinksModel(img: "Dairy_Milk_Mousse", nameSnacks: "Sweets & chocolates"),
+    SnacksAndDrinksModel(img: "Cold_drinks", nameSnacks: "Drinks & Juices"),
+    SnacksAndDrinksModel(img: "Tea_Coffee", nameSnacks: "Tea, Coffee & Milk Drinks"),
+    SnacksAndDrinksModel(img: "Maggi_img", nameSnacks: "Instant Food"),
+    SnacksAndDrinksModel(img: "Sauces", nameSnacks: "Sauces & Spreads"),
+    SnacksAndDrinksModel(img: "Dairy_Milk_Mousse", nameSnacks: "Paan Corner"),
+    SnacksAndDrinksModel(img: "Cold_drinks", nameSnacks: "Ice Creams & More")
 ]

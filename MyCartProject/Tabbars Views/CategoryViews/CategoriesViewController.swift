@@ -28,7 +28,7 @@ class CategoriesViewController: UIViewController {
     }()
     
     
-    var categoriesCollectionView = UIView()
+    //var categoriesCollectionView = UIView()
     
     
     override func viewDidLoad() {
@@ -119,17 +119,18 @@ class CategoriesViewController: UIViewController {
     
     
     @objc func navigateBack(){
-        
-       // print("Hello")
-       // navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     private func setupMainContentArea() {
         // Initialize your custom collection view
-        categoriesCollectionView = CategoryMainView()
+        let categoriesCollectionView = CategoryMainView()
         categoriesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         categoriesCollectionView.backgroundColor = .clear
-        
+        // Hook up callback from header -> main view -> view controller
+        categoriesCollectionView.onFilterButtonTapped = { [weak self] in
+                self?.handleFilterTapped()
+            }
         // Add to the view hierarchy
         view.addSubview(categoriesCollectionView)
         
@@ -141,49 +142,16 @@ class CategoriesViewController: UIViewController {
             categoriesCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10) // small right padding
         ])
     }
-
     
-    
-    
-    
-    
-    
-//    private func setupMainContentArea() {
-//        // This is a placeholder for your main content area that would sit next to the side menu.
-//        //let mainContentView = UIView()
-//    
-//        let mainContentView = UIView()
-//        
-//            mainContentView.backgroundColor = .systemGray5 // A distinct color for the content area
-//            mainContentView.layer.cornerRadius = 10
-//            mainContentView.layer.masksToBounds = true // Clip content to bounds if it goes outside rounded corners
-//            view.addSubview(mainContentView)
-//            mainContentView.translatesAutoresizingMaskIntoConstraints = false
-//            
-//            // Constraints for the main content view, positioned to the right of the side menu
-//            NSLayoutConstraint.activate([
-//                mainContentView.leadingAnchor.constraint(equalTo: sideMenuView.trailingAnchor, constant: 0), // 10pt spacing from side menu
-//                mainContentView.topAnchor.constraint(equalTo: view.topAnchor),
-//                mainContentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//                mainContentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10) // 10pt spacing from right edge
-//            ])
-//            
-//            // Add a label to the main content view for demonstration
-//            let contentLabel = UILabel()
-//            contentLabel.text = "Your Main Content Goes Here"
-//            contentLabel.textAlignment = .center
-//            contentLabel.font = UIFont.preferredFont(forTextStyle: .title2)
-//            contentLabel.textColor = .label
-//            // mainContentView.addSubview(contentLabel)
-//            contentLabel.translatesAutoresizingMaskIntoConstraints = false
-//            
-//            NSLayoutConstraint.activate([
-//                contentLabel.centerXAnchor.constraint(equalTo: mainContentView.centerXAnchor),
-//                contentLabel.centerYAnchor.constraint(equalTo: mainContentView.centerYAnchor)
-//            ])
-//            
-//        }
-        
+    private func handleFilterTapped() {
+        print("Filter button tapped in header — handled in ViewController!")
+        // guard let self = self else { return }
+       // let filterVC = GlassyViewController()
+        let filterVC = BlurredViewController()
+        filterVC.modalPresentationStyle = .overCurrentContext
+        filterVC.modalTransitionStyle = .crossDissolve
+        self.present(filterVC, animated: true)
+    }
 }
 
 

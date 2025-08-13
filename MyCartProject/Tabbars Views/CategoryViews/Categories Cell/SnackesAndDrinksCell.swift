@@ -78,14 +78,14 @@ class SnackesAndDrinksCell: UICollectionViewCell {
             imgView.topAnchor.constraint(equalTo: snacksView.topAnchor, constant: 5),
             imgView.leadingAnchor.constraint(equalTo: snacksView.leadingAnchor, constant: 0),
             imgView.trailingAnchor.constraint(equalTo: snacksView.trailingAnchor, constant: 0),
-            imgView.bottomAnchor.constraint(equalTo: snacksView.bottomAnchor, constant: -25),
+            imgView.bottomAnchor.constraint(equalTo: snacksView.bottomAnchor, constant: -45),
             
-            //titleText.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 0),
+//            titleText.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 5),
             titleText.centerXAnchor.constraint(equalTo: imgView.centerXAnchor),
             
             titleText.leadingAnchor.constraint(equalTo: imgView.leadingAnchor, constant: 5),
             titleText.trailingAnchor.constraint(equalTo: imgView.trailingAnchor, constant: -5),
-            titleText.bottomAnchor.constraint(equalTo: snacksView.bottomAnchor, constant: -5)
+            titleText.bottomAnchor.constraint(equalTo: snacksView.bottomAnchor, constant: -2)
             
         ])
     }

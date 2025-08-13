@@ -8,7 +8,10 @@
 import UIKit
 
 class CategoryMainView: UIView {
+    
+    var onFilterButtonTapped: (() -> Void)?
 
+    
     lazy var categoryMainViewCollectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
         cv.translatesAutoresizingMaskIntoConstraints = false
@@ -187,12 +190,10 @@ extension CategoryMainView: UICollectionViewDelegate, UICollectionViewDataSource
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FilterSortHeaderView.headerIdentifier, for: indexPath) as! FilterSortHeaderView
                 //header.delegate = self
                 header.backgroundColor = .white
-               
-                
+                header.onTappedFilter = { [weak self] in
+                            self?.onFilterButtonTapped?()
+                        }
                 return header
-                
-          
-                
             default:
                 let emptyHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "EmptyHeader", for: indexPath)
                 return emptyHeader
@@ -202,24 +203,11 @@ extension CategoryMainView: UICollectionViewDelegate, UICollectionViewDataSource
             return emptyHeader
         }
     }
-    
-    
-    
-    
-    
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        // Example: 2 items per row with spacing
-//        let padding: CGFloat = 10
-//        let itemsPerRow: CGFloat = 2
-//        let availableWidth = collectionView.bounds.width - (padding * (itemsPerRow + 1))
-//        let widthPerItem = availableWidth / itemsPerRow
-//        
-//        // Example: Fixed height or proportional
-//        return CGSize(width: widthPerItem, height: widthPerItem * 1.96)
-//    }
-
-    
 }
+
+
+
+
+
+
+

@@ -10,6 +10,8 @@ import UIKit
 class FilterSortHeaderView: UICollectionReusableView {
     
     static let headerIdentifier = "FilterSortHeaderView"
+    var onTappedFilter:(() -> Void)?
+    
     
     private let filtersButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -19,7 +21,8 @@ class FilterSortHeaderView: UICollectionReusableView {
         btn.tintColor = .black
         btn.setTitleColor(.black, for: .normal)
         btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
-        
+        btn.addTarget(self, action: #selector(filterSelection), for: .touchUpInside)
+
         // Space between icon and text
         btn.semanticContentAttribute = .forceLeftToRight
         btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 4)
@@ -68,4 +71,15 @@ class FilterSortHeaderView: UICollectionReusableView {
             sortButton.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
+    
+    
+    @objc func filterSelection(){
+        onTappedFilter?()
+    }
 }
+
+
+
+
+
+

@@ -80,12 +80,12 @@ class HouseHoldEssentialCell: UICollectionViewCell {
             imgView.trailingAnchor.constraint(equalTo: essentialView.trailingAnchor, constant: 0),
             imgView.bottomAnchor.constraint(equalTo: essentialView.bottomAnchor, constant: -25),
             
-            //titleText.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 0),
+            titleText.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 5),
             titleText.centerXAnchor.constraint(equalTo: imgView.centerXAnchor),
             
             titleText.leadingAnchor.constraint(equalTo: imgView.leadingAnchor, constant: 5),
             titleText.trailingAnchor.constraint(equalTo: imgView.trailingAnchor, constant: -5),
-            titleText.bottomAnchor.constraint(equalTo: essentialView.bottomAnchor, constant: -5)
+//            titleText.bottomAnchor.constraint(equalTo: essentialView.bottomAnchor, constant: -5)
             
         ])
     }

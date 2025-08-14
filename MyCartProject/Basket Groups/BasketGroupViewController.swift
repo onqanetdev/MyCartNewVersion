@@ -127,6 +127,16 @@ class BasketGroupViewController: UIViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+    
+        if #available(iOS 18.0, *) {
+            tabBarController?.isTabBarHidden = true
+        } else {
+            tabBarController?.tabBar.isHidden = true
+        }
+    }
+    
+    
     func configureUI(){
         view.addSubview(stickyHeaderVw)
 

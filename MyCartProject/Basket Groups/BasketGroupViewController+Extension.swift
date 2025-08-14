@@ -40,6 +40,13 @@ extension BasketGroupViewController: UICollectionViewDelegate, UICollectionViewD
              return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasketTotalCollectionViewCell.cellIdentifier, for: indexPath) as? BasketTotalCollectionViewCell else {fatalError("Unable deque cell...")}
+            cell.onTappedSelectAdd = { 
+                let vc = ChangeAddressViewController()
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true, completion: nil)
+            }
+            
             return cell
             
         default:

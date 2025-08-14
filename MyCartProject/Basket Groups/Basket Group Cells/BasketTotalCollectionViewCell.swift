@@ -11,6 +11,9 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     
     static let cellIdentifier = "BasketTotalCollectionViewCell"
     
+    
+     var onTappedSelectAdd:(() -> Void)?
+    
     let applyCouponCard:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -239,7 +242,7 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         titleColor: .white,
         cornerRadius: 12,
         target: self,
-        action: nil
+        action: #selector(selectAddressPop)
     )
     
     
@@ -450,6 +453,10 @@ class BasketTotalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     }
 
 
+    @objc func selectAddressPop(){
+        onTappedSelectAdd?()
+    }
+    
 }
 
 

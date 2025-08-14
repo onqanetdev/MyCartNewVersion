@@ -8,34 +8,66 @@
 import UIKit
 
 class GlassyViewController: UIViewController {
+    
+    
+    let glassView = GlassyView()
+    
+    let label = UILabel()
+    
+    private let wholeImgView: UIImageView = {
+        let vw = UIImageView()
+        vw.translatesAutoresizingMaskIntoConstraints = false
+        vw.layer.cornerRadius = 10
+        vw.clipsToBounds = true
+        vw.contentMode = .scaleToFill
+        vw.image = UIImage(named: "Sardar")
+        return vw
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Transparent background to see underlying VC
-       // view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-        view.backgroundColor = .clear
-        // Glass blur effect
-        let blurEffect = UIBlurEffect(style: .systemThinMaterial) // .systemUltraThinMaterial for lighter
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = CGRect(x: 10, y: 200, width: view.bounds.width - 10, height: 600)
-        blurView.autoresizingMask = [.flexibleWidth]
-        blurView.layer.cornerRadius = 20
-        blurView.clipsToBounds = true
-        blurView.alpha = 0.9
-        view.addSubview(blurView)
+        //view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        view.backgroundColor = .detailView
+        view.addSubview(wholeImgView)
+        glassView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(glassView)
         
-        // Dismiss button
-        let closeButton = UIButton(type: .system)
-        closeButton.setTitle("Close", for: .normal)
-        closeButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
-        closeButton.addTarget(self, action: #selector(closePopup), for: .touchUpInside)
-        closeButton.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-        closeButton.center = blurView.center
         
-        view.addSubview(closeButton)
+        label.text = "Liquid Glass"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        glassView.addVibrantSubview(label)
+        
+        setUpView()
     }
     
-    @objc func closePopup() {
-        dismiss(animated: true)
+    
+    
+    func setUpView(){
+        
+        NSLayoutConstraint.activate([
+            wholeImgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            wholeImgView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            wholeImgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            wholeImgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+        ])
+        
+        
+        NSLayoutConstraint.activate([
+            glassView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            glassView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
+            glassView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+            glassView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5)
+        ])
+        
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: glassView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: glassView.centerYAnchor)
+        ])
     }
 }
